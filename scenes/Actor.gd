@@ -45,16 +45,16 @@ func _physics_process(delta):
 	hitbox.global_position = global_position
 	camera.global_position = global_position
 
-	print(angular_velocity)
+#	print(angular_velocity)
 	if hit:
 		sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_DISABLED
 		anim_player.pause()
 		sprite.rotation = rotation
 		# TODO: Figuring out when we're done flying needs some massaging
-		if (abs(angular_velocity.x) <= 0.03 and abs(angular_velocity.y) <= 0.03) \
-		or (abs(angular_velocity.x) <= 0.03 and abs(angular_velocity.z) <= 0.03) \
-		or (abs(angular_velocity.y) <= 0.03 and abs(angular_velocity.z) <= 0.03):
-			hit = false
+#		if (abs(angular_velocity.x) <= 0.03 and abs(angular_velocity.y) <= 0.03) \
+#		or (abs(angular_velocity.x) <= 0.03 and abs(angular_velocity.z) <= 0.03) \
+#		or (abs(angular_velocity.y) <= 0.03 and abs(angular_velocity.z) <= 0.03):
+#			hit = false
 	else:
 		sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_FIXED_Y
 		anim_player.play()

@@ -67,8 +67,8 @@ func _physics_process(delta):
 					)
 					var to = raycast.to_global(pos_raised)
 					var dir = global_transform.origin.direction_to(to)
-					col.apply_central_impulse(dir.normalized()*10)
-					print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
+					col.apply_central_impulse(dir.normalized()*20)
+					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
 		reload_timer.start()
 		#rotation_degrees.x += 4.0 # gun recoil
@@ -88,7 +88,6 @@ func _on_ReloadTimer_timeout():
 	reload_timer.stop()
 	left_sprite.hide()
 	right_sprite.hide()
-	print("ready")
 
 func _on_AmmoLabelTimer_timeout():
 	ammo_label.hide()
