@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2ipgeu5bwk1g"]
+[gd_scene load_steps=7 format=3 uid="uid://c2ipgeu5bwk1g"]
 
+[ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_3h4vl"]
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="1_infcj"]
 [ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="1_p5b38"]
+[ext_resource type="Texture2D" uid="uid://eks4kwvbggrw" path="res://assets/ui/start_menu.png" id="3_tmd86"]
+[ext_resource type="Script" path="res://scenes/UI/QuitButton.gd" id="5_xk47v"]
+[ext_resource type="Texture2D" uid="uid://dgiswa58ennvh" path="res://assets/ui/fmod.png" id="6_wriqw"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -11,16 +15,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_3h4vl")
 script = ExtResource("1_infcj")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("3_tmd86")
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 1
@@ -29,12 +34,61 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -205.5
-offset_top = -54.5
-offset_right = 205.5
-offset_bottom = 54.5
+offset_left = -112.0
+offset_top = 12.0
+offset_right = 118.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "START"
 script = ExtResource("1_p5b38")
 next_scene = "res://scenes/World.tscn"
+
+[node name="AboutButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = 84.0
+offset_right = 118.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ABOUT"
+script = ExtResource("1_p5b38")
+next_scene = "res://scenes/UI/AboutMenu.tscn"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = 156.0
+offset_right = 118.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT
+"
+script = ExtResource("5_xk47v")
+
+[node name="FMOD" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -64.0
+offset_right = -17.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_wriqw")

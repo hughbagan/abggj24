@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://barq25rmi4rds"]
+[gd_scene load_steps=9 format=3 uid="uid://barq25rmi4rds"]
 
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_jp0o2"]
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="2_i15yu"]
+[ext_resource type="Script" path="res://scenes/UI/PausedScore.gd" id="3_1e74n"]
 [ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="3_hitky"]
 [ext_resource type="Script" path="res://scenes/UI/ResumeButton.gd" id="3_mqxbc"]
 [ext_resource type="Script" path="res://scenes/UI/QuitButton.gd" id="5_rq8ly"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p8h03"]
+font_size = 89
+
+[sub_resource type="LabelSettings" id="LabelSettings_daiq5"]
+font_size = 89
+font_color = Color(0.898039, 0.137255, 0.160784, 1)
 
 [node name="Pause" type="Control"]
 process_mode = 3
@@ -26,19 +34,36 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.607843)
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="PausedLabel" type="Label" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -37.0
-offset_top = 173.0
-offset_right = 33.0
-offset_bottom = 202.0
+offset_left = -144.0
+offset_top = 112.0
+offset_right = 139.0
+offset_bottom = 217.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 text = "PAUSED"
+label_settings = SubResource("LabelSettings_p8h03")
 horizontal_alignment = 1
+
+[node name="PausedScore" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.5
+offset_top = 224.0
+offset_right = 136.5
+offset_bottom = 329.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "39"
+label_settings = SubResource("LabelSettings_daiq5")
+horizontal_alignment = 1
+script = ExtResource("3_1e74n")
 
 [node name="ResumeButton" type="Button" parent="ColorRect"]
 layout_mode = 1
@@ -47,10 +72,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = -76.0
-offset_right = 74.0
-offset_bottom = 2.0
+offset_left = -72.0
+offset_top = 4.0
+offset_right = 78.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Resume"
@@ -63,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = 17.0
-offset_right = 76.0
-offset_bottom = 95.0
+offset_left = -72.0
+offset_top = 92.0
+offset_right = 78.0
+offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Home"
@@ -81,9 +106,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -72.0
-offset_top = 104.0
+offset_top = 180.0
 offset_right = 78.0
-offset_bottom = 182.0
+offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit
