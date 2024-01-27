@@ -66,7 +66,7 @@ func _physics_process(delta):
 						col.apply_impulse(dir.normalized()*20)
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
-					
+
 		#rotation_degrees.x += 4.0 # gun recoil
 		if weapon_tween:
 			weapon_tween.kill()

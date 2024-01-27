@@ -23,5 +23,5 @@ func pause():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# PAUSE functionality goes here...
 	get_tree().paused = true
-	
+
 	get_node("/root/World/PauseLayer/PauseMenu").show()

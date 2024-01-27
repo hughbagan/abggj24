@@ -47,16 +47,17 @@ func _physics_process(delta):
 
 #	print(angular_velocity)
 	if hit:
-		sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_DISABLED
+		pass
+		#sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_DISABLED
 		#anim_player.pause()
-		sprite.rotation = rotation
+		#sprite.rotation = rotation
 		# TODO: Figuring out when we're done flying needs some massaging
 #		if (abs(angular_velocity.x) <= 0.03 and abs(angular_velocity.y) <= 0.03) \
 #		or (abs(angular_velocity.x) <= 0.03 and abs(angular_velocity.z) <= 0.03) \
 #		or (abs(angular_velocity.y) <= 0.03 and abs(angular_velocity.z) <= 0.03):
 #			hit = false
 	else:
-		sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_FIXED_Y
+		#sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_FIXED_Y
 		#anim_player.play()
 		set_movement_target(player.global_position)
 		if nav.is_navigation_finished():
@@ -76,8 +77,8 @@ func _on_velocity_computed(safe_velocity:Vector3):
 	linear_velocity = safe_velocity
 
 func ragdoll_impulse(data):
-	$StandinMob/Armature/Skeleton3D.physical_bones_start_simulation()
-	for c in $StandinMob/Armature/Skeleton3D.get_children():
+	$CollisionShape3D/Skeleton3D.physical_bones_start_simulation()
+	for c in $CollisionShape3D/Skeleton3D.get_children():
 		if c.has_method("apply_impulse"):
 			c.apply_impulse(data)
 
@@ -87,4 +88,4 @@ func kill():
 	#anim_player.play("die")
 	Globals.score += 100
 	emit_signal("died")
-	
+

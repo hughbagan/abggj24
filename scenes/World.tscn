@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c8xhmsicg8x6q" path="res://scenes/Player.tscn" id="2"]
 [ext_resource type="MeshLibrary" uid="uid://j0nj45j27k7y" path="res://assets/tiles.meshlib" id="5"]
-[ext_resource type="PackedScene" uid="uid://c4kcmd7n0nflu" path="res://scenes/StandinMob.tscn" id="5_ltax6"]
+[ext_resource type="PackedScene" uid="uid://ciuv2qk880a58" path="res://scenes/StandinMob.tscn" id="5_ltax6"]
 [ext_resource type="PackedScene" uid="uid://haatw24xcif3" path="res://scenes/UI/HUD.tscn" id="5_ltw2r"]
 [ext_resource type="Script" path="res://scenes/World.gd" id="6"]
 [ext_resource type="PackedScene" uid="uid://cnrlgcetcejay" path="res://scenes/Actor.tscn" id="7_1fp6o"]
@@ -64,3 +64,4 @@ layer = 5
 visible = false
 
 [node name="StandinMod" parent="." instance=ExtResource("5_ltax6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80238, -2.04978)
