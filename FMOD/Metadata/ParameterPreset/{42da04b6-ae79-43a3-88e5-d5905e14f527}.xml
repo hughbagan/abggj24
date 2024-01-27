@@ -19,7 +19,10 @@
 			<value>0</value>
 		</property>
 		<property name="seekSpeed">
-			<value>100</value>
+			<value>150</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 		<relationship name="automators">
 			<destination>{89e4eedd-037a-4d0a-b575-8d9a1f679407}</destination>
@@ -30,32 +33,32 @@
 			<value>cursorPosition</value>
 		</property>
 		<relationship name="automationCurves">
-			<destination>{de90e669-9c18-40a1-8fe5-20d05313796f}</destination>
+			<destination>{28f89a2e-f110-468e-9879-f0c3df128091}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationCurve" id="{de90e669-9c18-40a1-8fe5-20d05313796f}">
+	<object class="AutomationCurve" id="{28f89a2e-f110-468e-9879-f0c3df128091}">
 		<relationship name="parameter">
 			<destination>{d8a4850f-211b-4412-a559-c4cea53946af}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{4f3dc3d9-ed65-4dc5-a333-b87700184157}</destination>
-			<destination>{ffcc9846-2d7a-4811-8fe1-da7374250b0a}</destination>
+			<destination>{41533e67-b79a-4608-8450-9c1ddb792d78}</destination>
+			<destination>{073dbb3e-763f-4bae-8bc9-2a88c8e0ba89}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationPoint" id="{4f3dc3d9-ed65-4dc5-a333-b87700184157}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{ffcc9846-2d7a-4811-8fe1-da7374250b0a}">
+	<object class="AutomationPoint" id="{41533e67-b79a-4608-8450-9c1ddb792d78}">
 		<property name="position">
 			<value>1</value>
 		</property>
 		<property name="value">
 			<value>100</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{073dbb3e-763f-4bae-8bc9-2a88c8e0ba89}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
 		</property>
 	</object>
 </objects>
