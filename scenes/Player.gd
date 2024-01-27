@@ -10,8 +10,8 @@ const MOUSE_SENS = 0.3
 @onready var ammo_label_timer = $AmmoLabelTimer
 @onready var camera = $Camera3D
 @onready var punch_range = $PunchRange
-@onready var left_sprite = $CanvasLayer/Control/Left
-@onready var right_sprite = $CanvasLayer/Control/Right
+@onready var weapon = $CanvasLayer/Control/Weapon
+var weapon_tween
 
 enum {PUNCH_NONE, PUNCH_LEFT, PUNCH_RIGHT}
 var punch_mode = PUNCH_NONE
@@ -20,9 +20,9 @@ var ammo = 6
 var reload = 0
 
 func _ready():
-	anim_player.play("idle")
 	#aawait get_tree().idle_frame # wait one frame
 #	get_tree().call_group("zombies", "set_player", self)
+	pass
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -47,17 +47,10 @@ func _physics_process(delta):
 	var right = Input.is_action_just_pressed("punch_right")
 
 	if (left or right) and reload_timer.is_stopped():
-		if left:
-			punch_mode = PUNCH_LEFT
-			left_sprite.show()
-		if right:
-			punch_mode = PUNCH_RIGHT
-			right_sprite.show()
+		weapon.show()
 		reload = 0
-		anim_player.stop()
-		anim_player.play("shoot")
 		var col = raycast.get_collider()
-		if raycast.is_colliding() and col.has_method("kill"):
+		if raycast.is_colliding() and col is Actor:
 			if col.hitbox:
 				if punch_range.overlaps_area(col.hitbox):
 					var pos_raised = Vector3(
@@ -70,10 +63,13 @@ func _physics_process(delta):
 					col.apply_impulse(dir.normalized()*20)
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
-		reload_timer.start()
+					col.damage()
 		#rotation_degrees.x += 4.0 # gun recoil
-	else:
-		punch_mode = PUNCH_NONE
+		if weapon_tween:
+			weapon_tween.kill()
+		weapon_tween = get_tree().create_tween()
+		weapon_tween.tween_property(weapon, "rotation_degrees", weapon.rotation_degrees-360, 0.25)
+		reload_timer.start()
 
 func kill():
 	PauseManager.pause()
@@ -85,9 +81,7 @@ func show_score():
 	ammo_label.show()
 
 func _on_ReloadTimer_timeout():
-	reload_timer.stop()
-	left_sprite.hide()
-	right_sprite.hide()
+	pass
 
 func _on_AmmoLabelTimer_timeout():
 	ammo_label.hide()
