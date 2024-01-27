@@ -20,6 +20,9 @@ mono_crash.*.json
 # Suggested by Hugh
 .DS_Store
 
+# Art Backup Files
+*/*.blend1
+
 # FMOD
 addons/FMOD/editor/cache/
 !addons/FMOD/editor/resources/
