@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpnknq6nv54mo"]
+[gd_scene load_steps=11 format=3 uid="uid://bpnknq6nv54mo"]
 
 [ext_resource type="PackedScene" uid="uid://c8xhmsicg8x6q" path="res://scenes/Player.tscn" id="2"]
 [ext_resource type="MeshLibrary" uid="uid://j0nj45j27k7y" path="res://assets/tiles.meshlib" id="5"]
-[ext_resource type="FontFile" uid="uid://c7o3nqv7qaj5j" path="res://assets/fonts/GrinchedRegular.otf" id="5_lrxmf"]
+[ext_resource type="PackedScene" uid="uid://haatw24xcif3" path="res://scenes/UI/HUD.tscn" id="5_ltw2r"]
 [ext_resource type="Script" path="res://scenes/World.gd" id="6"]
-[ext_resource type="Script" path="res://scenes/ScoreLabel.gd" id="6_festp"]
 [ext_resource type="PackedScene" uid="uid://cnrlgcetcejay" path="res://scenes/Actor.tscn" id="7_1fp6o"]
-[ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="7_kkru0"]
+[ext_resource type="PackedScene" uid="uid://barq25rmi4rds" path="res://scenes/UI/PauseScreen.tscn" id="8_nsv6c"]
 
 [sub_resource type="Sky" id="2"]
 
@@ -22,10 +21,6 @@ polygons = [PackedInt32Array(5, 4, 0), PackedInt32Array(0, 4, 3), PackedInt32Arr
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0phf4"]
 size = Vector3(22, 1, 22)
-
-[sub_resource type="Theme" id="Theme_v0x2q"]
-default_font = ExtResource("5_lrxmf")
-default_font_size = 22
 
 [node name="World" type="Node3D"]
 script = ExtResource("6")
@@ -50,40 +45,19 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="Actor" parent="." instance=ExtResource("7_1fp6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54642, 1.80658, -6.03551)
 
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="HUD" parent="HUDLayer" instance=ExtResource("5_ltw2r")]
+
 [node name="FloorArea3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22166, 0, -6.05989)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorArea3D"]
 shape = SubResource("BoxShape3D_0phf4")
 
-[node name="UserInterface" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-size_flags_horizontal = 0
-theme = SubResource("Theme_v0x2q")
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 5
 
-[node name="ScoreLabel" type="Label" parent="UserInterface"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -38.5
-offset_right = 38.5
-offset_bottom = 29.0
-grow_horizontal = 2
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_festp")
-
-[node name="TestButton" type="Button" parent="UserInterface"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 124.0
-offset_bottom = 55.0
-text = "Test"
-script = ExtResource("7_kkru0")
-next_scene = "res://scenes/UI/GameOver.tscn"
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("8_nsv6c")]
+visible = false

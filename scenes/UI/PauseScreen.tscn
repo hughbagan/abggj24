@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://barq25rmi4rds"]
+
+[ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_jp0o2"]
+[ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="2_i15yu"]
+[ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="3_hitky"]
+[ext_resource type="Script" path="res://scenes/UI/ResumeButton.gd" id="3_mqxbc"]
+[ext_resource type="Script" path="res://scenes/UI/QuitButton.gd" id="5_rq8ly"]
+
+[node name="Pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jp0o2")
+script = ExtResource("2_i15yu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.607843)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.0
+offset_top = 173.0
+offset_right = 33.0
+offset_bottom = 202.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -76.0
+offset_right = 74.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+script = ExtResource("3_mqxbc")
+
+[node name="HomeButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 17.0
+offset_right = 76.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Home"
+script = ExtResource("3_hitky")
+next_scene = "res://scenes/UI/MainMenu.tscn"
+
+[node name="QuitButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = 104.0
+offset_right = 78.0
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit
+"
+script = ExtResource("5_rq8ly")
