@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://b46mgv5adw0k2"]
+
+[resource]
+file_path = "res://FMOD/Build/Desktop/Music.bank"
+modified_time = 1706386144
+path = "bank:/Music"
+guid = "{9e3f44dc-1858-495f-b6ae-897dfa7627be}"
+name = "Music"
