@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8xhmsicg8x6q"]
+[gd_scene load_steps=15 format=3 uid="uid://c8xhmsicg8x6q"]
 
 [ext_resource type="Texture2D" uid="uid://dcgk416cuol8g" path="res://assets/reticle.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://cghhs8a733dq" path="res://assets/banana.png" id="2_gy0pw"]
 [ext_resource type="Script" path="res://scenes/Player.gd" id="3"]
 [ext_resource type="FontFile" uid="uid://bfnrupvkqq45c" path="res://assets/dpcomic-crowned/dpcomic-crowned.ttf" id="4"]
+[ext_resource type="EventAsset" uid="uid://c2kbinyfswmp" path="res://addons/FMOD/editor/resources/events/{3685aa65-cc1a-4264-8efc-5d86f4ab26cc}.tres" id="5_hssu4"]
 
 [sub_resource type="CapsuleShape3D" id="1"]
 radius = 0.75
@@ -172,6 +173,9 @@ wait_time = 0.25
 one_shot = true
 
 [node name="AmmoLabelTimer" type="Timer" parent="."]
+
+[node name="swing_sfx-2D" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("5_hssu4")
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]
 [connection signal="timeout" from="AmmoLabelTimer" to="." method="_on_AmmoLabelTimer_timeout"]

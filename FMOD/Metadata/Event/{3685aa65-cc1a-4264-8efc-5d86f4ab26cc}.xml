@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3685aa65-cc1a-4264-8efc-5d86f4ab26cc}">
 		<property name="name">
-			<value>test</value>
+			<value>test_sfx</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -33,6 +33,7 @@
 		</relationship>
 		<relationship name="banks">
 			<destination>{c48568cb-49ed-47c2-a555-18b47b9a3f08}</destination>
+			<destination>{8b9c35e5-dc7c-43f9-8e9a-2970979a1d67}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{29aa738c-ca31-49a1-933d-1b1687244f55}">

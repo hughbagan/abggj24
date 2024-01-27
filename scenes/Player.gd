@@ -64,6 +64,7 @@ func _physics_process(delta):
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
 					col.damage()
+					$"swing_sfx-2D".play_event
 		#rotation_degrees.x += 4.0 # gun recoil
 		if weapon_tween:
 			weapon_tween.kill()
