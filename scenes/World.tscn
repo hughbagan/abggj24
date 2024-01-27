@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpnknq6nv54mo"]
+[gd_scene load_steps=16 format=3 uid="uid://bpnknq6nv54mo"]
 
 [ext_resource type="PackedScene" uid="uid://c8xhmsicg8x6q" path="res://scenes/Player.tscn" id="2"]
 [ext_resource type="MeshLibrary" uid="uid://j0nj45j27k7y" path="res://assets/tiles.meshlib" id="5"]
-[ext_resource type="FontFile" uid="uid://c7o3nqv7qaj5j" path="res://assets/fonts/GrinchedRegular.otf" id="5_lrxmf"]
+[ext_resource type="PackedScene" uid="uid://haatw24xcif3" path="res://scenes/UI/HUD.tscn" id="5_ltw2r"]
 [ext_resource type="Script" path="res://scenes/World.gd" id="6"]
-[ext_resource type="Script" path="res://scenes/ScoreLabel.gd" id="6_festp"]
 [ext_resource type="PackedScene" uid="uid://cnrlgcetcejay" path="res://scenes/Actor.tscn" id="7_1fp6o"]
-[ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="7_kkru0"]
+[ext_resource type="PackedScene" uid="uid://barq25rmi4rds" path="res://scenes/UI/PauseScreen.tscn" id="8_nsv6c"]
+[ext_resource type="EventAsset" uid="uid://bcrxith4wlw5a" path="res://addons/FMOD/editor/resources/events/{18c95f7e-007a-4aa2-874e-63f7dc942c36}.tres" id="8_uv0od"]
 
 [sub_resource type="Sky" id="2"]
 
@@ -23,9 +23,33 @@ polygons = [PackedInt32Array(5, 4, 0), PackedInt32Array(0, 4, 3), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_0phf4"]
 size = Vector3(22, 1, 22)
 
-[sub_resource type="Theme" id="Theme_v0x2q"]
-default_font = ExtResource("5_lrxmf")
-default_font_size = 22
+[sub_resource type="BankAsset" id="BankAsset_j4ae7"]
+file_path = "res://FMOD/Build/Desktop/Master.bank"
+modified_time = 1706335467
+path = "bank:/Master"
+guid = "{c48568cb-49ed-47c2-a555-18b47b9a3f08}"
+name = "Master"
+
+[sub_resource type="BankAsset" id="BankAsset_be1wk"]
+file_path = "res://FMOD/Build/Desktop/Master.strings.bank"
+modified_time = 1706335467
+path = "bank:/Master.strings"
+guid = "{5c98481f-3896-0b80-231c-924a8a693990}"
+name = "Master.strings"
+
+[sub_resource type="BankAsset" id="BankAsset_dw5qn"]
+file_path = "res://FMOD/Build/Desktop/Music.bank"
+modified_time = 1706386144
+path = "bank:/Music"
+guid = "{9e3f44dc-1858-495f-b6ae-897dfa7627be}"
+name = "Music"
+
+[sub_resource type="BankAsset" id="BankAsset_0w68w"]
+file_path = "res://FMOD/Build/Desktop/SFX.bank"
+modified_time = 1706386144
+path = "bank:/SFX"
+guid = "{8b9c35e5-dc7c-43f9-8e9a-2970979a1d67}"
+name = "SFX"
 
 [node name="World" type="Node3D"]
 script = ExtResource("6")
@@ -50,40 +74,32 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="Actor" parent="." instance=ExtResource("7_1fp6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54642, 1.80658, -6.03551)
 
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="HUD" parent="HUDLayer" instance=ExtResource("5_ltw2r")]
+
 [node name="FloorArea3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22166, 0, -6.05989)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorArea3D"]
 shape = SubResource("BoxShape3D_0phf4")
 
-[node name="UserInterface" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-size_flags_horizontal = 0
-theme = SubResource("Theme_v0x2q")
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 5
 
-[node name="ScoreLabel" type="Label" parent="UserInterface"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -38.5
-offset_right = 38.5
-offset_bottom = 29.0
-grow_horizontal = 2
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_festp")
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("8_nsv6c")]
+visible = false
 
-[node name="TestButton" type="Button" parent="UserInterface"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 124.0
-offset_bottom = 55.0
-text = "Test"
-script = ExtResource("7_kkru0")
-next_scene = "res://scenes/UI/GameOver.tscn"
+[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
+load_on = 1
+num_banks = 4
+bank_0 = SubResource("BankAsset_j4ae7")
+bank_1 = SubResource("BankAsset_be1wk")
+bank_2 = SubResource("BankAsset_dw5qn")
+bank_3 = SubResource("BankAsset_0w68w")
+
+[node name="StudioEventEmitter3D" type="StudioEventEmitter3D" parent="StudioBankLoader"]
+play_event = 1
+stop_event = 3
+event = ExtResource("8_uv0od")

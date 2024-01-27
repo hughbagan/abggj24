@@ -3,6 +3,7 @@ extends CharacterBody3D
 const MOVE_SPEED = 7
 const MOUSE_SENS = 0.3
 
+@export var hit_sfx: EventAsset
 @onready var anim_player = $AnimationPlayer
 @onready var raycast = $RayCast3D
 @onready var reload_timer = $ReloadTimer
@@ -64,6 +65,7 @@ func _physics_process(delta):
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
 					col.damage()
+					FMODRuntime.play_one_shot(hit_sfx)
 		#rotation_degrees.x += 4.0 # gun recoil
 		if weapon_tween:
 			weapon_tween.kill()

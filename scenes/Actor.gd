@@ -11,7 +11,7 @@ const MOUSE_SENS = 0.3
 @onready var nav = $NavigationAgent3D
 @onready var sprite = $Sprite3D
 @onready var gridmap := get_node("/root/World/NavigationRegion3D/GridMap")
-@onready var score_label := get_node("/root/World/UserInterface/ScoreLabel")
+@onready var score_label := get_node("/root/World/HUDLayer/HUD/Score")
 
 enum {PUNCH_NONE, PUNCH_LEFT, PUNCH_RIGHT}
 var punch_mode = PUNCH_NONE
@@ -103,7 +103,9 @@ func damage():
 func _on_body_entered(body):
 	if body is GridMap and not on_floor:
 		combo += 1
-		score_label._on_mob_bounce(combo)
+		if combo > Globals.score:
+			Globals.score = combo
+			score_label.text = str(Globals.score)
 
 func _on_floor_entered(body):
 	on_floor = true
