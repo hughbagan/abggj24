@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://c8xhmsicg8x6q"]
 
-[ext_resource type="Texture2D" uid="uid://dyrdbhbxp2e7x" path="res://assets/shoot.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://dcgk416cuol8g" path="res://assets/reticle.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cghhs8a733dq" path="res://assets/banana.png" id="2_gy0pw"]
 [ext_resource type="Script" path="res://scenes/Player.gd" id="3"]
 [ext_resource type="FontFile" uid="uid://bfnrupvkqq45c" path="res://assets/dpcomic-crowned/dpcomic-crowned.ttf" id="4"]
 
@@ -17,7 +17,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Control/Right:frame")
+tracks/0/path = NodePath("../CanvasLayer/Control/Weapon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,7 +33,7 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Control/Right:frame")
+tracks/0/path = NodePath("../CanvasLayer/Control/Weapon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,7 +49,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Control/Right:frame")
+tracks/0/path = NodePath("../CanvasLayer/Control/Weapon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -65,7 +65,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Control/Right:frame")
+tracks/0/path = NodePath("../CanvasLayer/Control/Weapon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -136,20 +136,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Right" type="Sprite2D" parent="CanvasLayer/Control"]
-visible = false
-position = Vector2(250, -256)
-texture = ExtResource("1")
-hframes = 4
-frame = 1
-
-[node name="Left" type="Sprite2D" parent="CanvasLayer/Control"]
-visible = false
-position = Vector2(-250, -256)
-texture = ExtResource("1")
-flip_h = true
-hframes = 4
-frame = 1
+[node name="Weapon" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(1, 25)
+rotation = 3.14159
+scale = Vector2(-0.58, 0.5)
+texture = ExtResource("2_gy0pw")
+centered = false
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8
@@ -176,7 +168,8 @@ theme = SubResource("7")
 text = "6"
 
 [node name="ReloadTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.25
+one_shot = true
 
 [node name="AmmoLabelTimer" type="Timer" parent="."]
 

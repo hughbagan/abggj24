@@ -23,6 +23,8 @@ var navigation = null
 var dead = false
 var hit = false
 var path = []
+@export var hp = 3
+var PickupScene = preload("res://scenes/Pickup.tscn")
 
 signal died
 
@@ -50,6 +52,7 @@ func _physics_process(delta):
 		sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_DISABLED
 		anim_player.pause()
 		sprite.rotation = rotation
+		apply_torque(Vector3(1, 1, 1)*5)
 		# TODO: Figuring out when we're done flying needs some massaging
 #		if (abs(angular_velocity.x) <= 0.03 and abs(angular_velocity.y) <= 0.03) \
 #		or (abs(angular_velocity.x) <= 0.03 and abs(angular_velocity.z) <= 0.03) \
@@ -75,9 +78,18 @@ func set_movement_target(movement_target:Vector3):
 func _on_velocity_computed(safe_velocity:Vector3):
 	linear_velocity = safe_velocity
 
-func kill():
-	dead = true
-	$CollisionShape3D.disabled = true
-	anim_player.play("die")
-	Globals.score += 100
-	emit_signal("died")
+func damage():
+	hp -= 1
+	if hp <= 0:
+		var pickup = PickupScene.instantiate()
+		get_parent().add_child(pickup)
+		pickup.global_position = global_position
+		queue_free()
+
+
+#func kill():
+#	dead = true
+#	$CollisionShape3D.disabled = true
+#	anim_player.play("die")
+#	Globals.score += 100
+#	emit_signal("died")
