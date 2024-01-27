@@ -11,6 +11,7 @@ const MOUSE_SENS = 0.3
 @onready var nav = $NavigationAgent3D
 @onready var sprite = $Sprite3D
 @onready var gridmap := get_node("/root/World/NavigationRegion3D/GridMap")
+@onready var score_label := get_node("/root/World/UserInterface/ScoreLabel")
 
 enum {PUNCH_NONE, PUNCH_LEFT, PUNCH_RIGHT}
 var punch_mode = PUNCH_NONE
@@ -23,8 +24,10 @@ var navigation = null
 var dead = false
 var hit = false
 var path = []
-@export var hp = 3
+@export var hp = 5
 var PickupScene = preload("res://scenes/Pickup.tscn")
+var combo = 0
+var on_floor = true
 
 signal died
 
@@ -32,8 +35,10 @@ func _ready():
 	add_to_group("zombies")
 	if player:
 		connect("died", Callable(player, "_on_Zombie_died"))
-	anim_player.play("walk")
+	#anim_player.play("walk")
 	nav.velocity_computed.connect(Callable(_on_velocity_computed))
+	get_node("/root/World/FloorArea3D").connect("body_entered", Callable(self, "_on_floor_entered"))
+	get_node("/root/World/FloorArea3D").connect("body_exited", Callable(self, "_on_floor_exited"))
 
 func set_player(p):
 	player = p
@@ -50,7 +55,7 @@ func _physics_process(delta):
 #	print(angular_velocity)
 	if hit:
 		sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_DISABLED
-		anim_player.pause()
+		#anim_player.pause()
 		sprite.rotation = rotation
 		apply_torque(Vector3(1, 1, 1)*5)
 		# TODO: Figuring out when we're done flying needs some massaging
@@ -60,7 +65,7 @@ func _physics_process(delta):
 #			hit = false
 	else:
 		sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_FIXED_Y
-		anim_player.play()
+		#anim_player.play()
 		set_movement_target(player.global_position)
 		if nav.is_navigation_finished():
 			return
@@ -93,3 +98,16 @@ func damage():
 #	anim_player.play("die")
 #	Globals.score += 100
 #	emit_signal("died")
+
+
+func _on_body_entered(body):
+	if body is GridMap and not on_floor:
+		combo += 1
+		score_label._on_mob_bounce(combo)
+
+func _on_floor_entered(body):
+	on_floor = true
+	combo = 0
+
+func _on_floor_exited(body):
+	on_floor = false
