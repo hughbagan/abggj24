@@ -39,4 +39,3 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Actor" parent="." instance=ExtResource("7_1fp6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54642, 1.80658, -6.03551)
-gravity_scale = 5.0

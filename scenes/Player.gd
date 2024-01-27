@@ -67,7 +67,7 @@ func _physics_process(delta):
 					)
 					var to = raycast.to_global(pos_raised)
 					var dir = global_transform.origin.direction_to(to)
-					col.apply_central_impulse(dir.normalized()*20)
+					col.apply_impulse(dir.normalized()*20)
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
 		reload_timer.start()
