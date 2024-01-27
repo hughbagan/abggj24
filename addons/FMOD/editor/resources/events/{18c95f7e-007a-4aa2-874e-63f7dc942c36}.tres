@@ -1,29 +1,9 @@
-[gd_resource type="EventAsset" load_steps=4 format=3 uid="uid://bcrxith4wlw5a"]
-
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_2glky"]
-data1 = 2260334737
-data2 = 3144263903
-
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_lpdo8"]
-name = "music_energy"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_2glky")
-maximum = 1.0
-flags = 8
-guid = "{d8a4850f-211b-4412-a559-c4cea53946af}"
-
-[sub_resource type="ParameterAsset" id="ParameterAsset_2hxe4"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_lpdo8")
-path = "parameter:/music_energy"
-guid = "{d8a4850f-211b-4412-a559-c4cea53946af}"
-name = "music_energy"
+[gd_resource type="EventAsset" format=3 uid="uid://bcrxith4wlw5a"]
 
 [resource]
 is_oneshot = true
 min_distance = 1.0
 max_distance = 20.0
-parameters = {
-"{d8a4850f-211b-4412-a559-c4cea53946af}": SubResource("ParameterAsset_2hxe4")
-}
 path = "event:/level_music"
 guid = "{18c95f7e-007a-4aa2-874e-63f7dc942c36}"
 name = "level_music"
