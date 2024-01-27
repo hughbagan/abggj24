@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{42da04b6-ae79-43a3-88e5-d5905e14f527}">
+		<property name="name">
+			<value>internal_music_energy</value>
+		</property>
+		<relationship name="folder">
+			<destination>{5a371425-10d7-46d5-b326-0b7e0c8f7542}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a45ce585-5c7e-40ff-9eeb-6ecf222cb2af}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a45ce585-5c7e-40ff-9eeb-6ecf222cb2af}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>100</value>
+		</property>
+		<relationship name="automators">
+			<destination>{89e4eedd-037a-4d0a-b575-8d9a1f679407}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{89e4eedd-037a-4d0a-b575-8d9a1f679407}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{de90e669-9c18-40a1-8fe5-20d05313796f}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{de90e669-9c18-40a1-8fe5-20d05313796f}">
+		<relationship name="parameter">
+			<destination>{d8a4850f-211b-4412-a559-c4cea53946af}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{4f3dc3d9-ed65-4dc5-a333-b87700184157}</destination>
+			<destination>{ffcc9846-2d7a-4811-8fe1-da7374250b0a}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{4f3dc3d9-ed65-4dc5-a333-b87700184157}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{ffcc9846-2d7a-4811-8fe1-da7374250b0a}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>100</value>
+		</property>
+	</object>
+</objects>
