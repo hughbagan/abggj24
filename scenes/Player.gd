@@ -50,7 +50,7 @@ func _physics_process(delta):
 		weapon.show()
 		reload = 0
 		var col = raycast.get_collider()
-		if raycast.is_colliding() and col is Actor:
+		if raycast.is_colliding() and (col is Actor or col.has_method("kill")):
 			if col.hitbox:
 				if punch_range.overlaps_area(col.hitbox):
 					var pos_raised = Vector3(
