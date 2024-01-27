@@ -22,6 +22,7 @@ mono_crash.*.json
 
 # Art Backup Files
 */*.blend1
+*/*.painter_lock
 
 # FMOD
 addons/FMOD/editor/cache/
