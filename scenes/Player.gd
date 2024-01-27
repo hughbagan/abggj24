@@ -28,7 +28,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			rotation_degrees.y -= MOUSE_SENS * event.relative.x
-			#rotation_degrees.x = clamp(rotation_degrees.x - event.relative.y * MOUSE_SENS, -90, 90)
+			rotation_degrees.x = clamp(rotation_degrees.x - event.relative.y * MOUSE_SENS, -90, 90)
 
 func _physics_process(delta):
 	var move_vec = Vector3()
@@ -67,7 +67,7 @@ func _physics_process(delta):
 					)
 					var to = raycast.to_global(pos_raised)
 					var dir = global_transform.origin.direction_to(to)
-					col.apply_central_impulse(dir.normalized()*20)
+					col.apply_impulse(dir.normalized()*20)
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
 		reload_timer.start()

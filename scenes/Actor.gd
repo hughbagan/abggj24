@@ -69,33 +69,6 @@ func _physics_process(delta):
 		else:
 			_on_velocity_computed(new_velocity)
 
-#	var move_vec = Vector3()
-#	var cam_basis = camera.global_transform.basis
-#	if Input.is_action_pressed("move_forwards_2"):
-#		move_vec = -cam_basis.z
-#		apply_central_impulse(move_vec.normalized() / 2)
-#	if Input.is_action_pressed("move_backwards_2"):
-#		move_vec = cam_basis.z
-#		apply_central_impulse(move_vec.normalized() / 2)
-#	if Input.is_action_pressed("move_left_2"):
-#		move_vec = cam_basis.z.rotated(Vector3(0, 0, 1), PI*0.5)
-#		apply_central_impulse(move_vec.normalized() / 2)
-#	if Input.is_action_pressed("move_right_2"):
-#		move_vec = cam_basis.z.rotated(Vector3(0, 0, 1), -PI*0.5)
-#		apply_central_impulse(move_vec.normalized() / 2)
-#	move_vec = move_vec.rotated(Vector3(0, 1, 0), rotation.y)
-
-
-#	if move_speed > 0.0:
-#		direction = direction.normalized()
-#		direction = direction.rotated(Vector3(0, 1, 0), rotation.y)
-#		move_and_collide(direction * move_speed * delta)
-
-#func _input(event):
-#	if event is InputEventMouseMotion:
-#		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-#			camera.rotation_degrees.y -= MOUSE_SENS * event.relative.x
-
 func set_movement_target(movement_target:Vector3):
 	nav.set_target_position(movement_target)
 
