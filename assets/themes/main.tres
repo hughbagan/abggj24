@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ba04662dntpfr"]
+
+[ext_resource type="FontFile" uid="uid://c7o3nqv7qaj5j" path="res://assets/fonts/GrinchedRegular.otf" id="1_0ie3v"]
+
+[resource]
+default_font = ExtResource("1_0ie3v")
+default_font_size = 22
