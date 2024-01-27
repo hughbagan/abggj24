@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cteidqpa14g1t"]
+
+[ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_xk0bq"]
+[ext_resource type="Texture2D" uid="uid://c7wwqhkgu1i0p" path="res://assets/ui/about_screen.png" id="2_gm8xa"]
+[ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="3_pv5lp"]
+
+[node name="AboutMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xk0bq")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gm8xa")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 27.0
+offset_right = 160.0
+offset_bottom = 99.0
+text = "BACK"
+script = ExtResource("3_pv5lp")
+next_scene = "res://scenes/UI/MainMenu.tscn"
