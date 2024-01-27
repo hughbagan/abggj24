@@ -1,6 +1,5 @@
 extends Button
 
-@export var next_scene : String
 @onready var button : Button = $"."
 
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +8,4 @@ func _ready():
 
 
 func _on_pressed():
-	print("Changing to %s", next_scene)
-	get_tree().paused = false
-	get_tree().change_scene_to_file(next_scene)
+	get_tree().quit()
