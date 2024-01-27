@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpnknq6nv54mo"]
+[gd_scene load_steps=16 format=3 uid="uid://bpnknq6nv54mo"]
 
 [ext_resource type="PackedScene" uid="uid://c8xhmsicg8x6q" path="res://scenes/Player.tscn" id="2"]
 [ext_resource type="MeshLibrary" uid="uid://j0nj45j27k7y" path="res://assets/tiles.meshlib" id="5"]
