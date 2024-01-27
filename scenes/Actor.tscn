@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cp1n042c8st5m" path="res://assets/guywalking.png" id="2_dohv2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nhvqk"]
-friction = 0.4
-bounce = 0.7
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0w4lq"]
 radius = 1.3
@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 physics_material_override = SubResource("PhysicsMaterial_nhvqk")
 max_contacts_reported = 20
 contact_monitor = true
-angular_damp = 5.0
+angular_damp = 2.0
 script = ExtResource("1_xijnt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
