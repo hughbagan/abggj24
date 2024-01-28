@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c1df8059-6838-4287-af24-64c75b55e485}">
+		<property name="note">
+			<value>https://store.steampowered.com/subscriber_agreement#2
+
+Section 2A
+
+Valve hereby grants, and you accept, a non-exclusive license and right, to use the Content and Services for your personal, non-commercial use...
+
+Section 2</value>
+		</property>
+		<property name="assetPath">
+			<value>melee_frying_pan_04.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.67918367346938779</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{22bd37ee-6b78-4637-ab70-62f0f24b403d}</destination>
+		</relationship>
+	</object>
+</objects>

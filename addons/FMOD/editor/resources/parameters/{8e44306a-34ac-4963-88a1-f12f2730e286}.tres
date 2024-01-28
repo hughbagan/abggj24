@@ -1,0 +1,19 @@
+[gd_resource type="ParameterAsset" load_steps=3 format=3 uid="uid://b08xd7x2073xu"]
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_kxyqw"]
+data1 = 671686735
+data2 = 3665666380
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_q501b"]
+name = "weapon"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_kxyqw")
+maximum = 8.0
+flags = 28
+guid = "{8e44306a-34ac-4963-88a1-f12f2730e286}"
+
+[resource]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_q501b")
+labels = ["Pan", "Banana", "Hammer", "Bat", "Baseball", "Bass", "Fart", "Sword", "Bomb"]
+path = "parameter:/weapon"
+guid = "{8e44306a-34ac-4963-88a1-f12f2730e286}"
+name = "weapon"

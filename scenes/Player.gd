@@ -11,6 +11,7 @@ const MOUSE_SENS = 0.3
 @onready var ammo_label_timer = $AmmoLabelTimer
 @onready var camera = $Camera3D
 @onready var punch_range = $PunchRange
+@onready var studio_trigger = $StudioGlobalParameterTrigger
 @onready var weapons = [
 	$CanvasLayer/Weapons/Pan,
 	$CanvasLayer/Weapons/Banana,
@@ -35,10 +36,7 @@ func _ready():
 	#aawait get_tree().idle_frame # wait one frame
 #	get_tree().call_group("zombies", "set_player", self)
 	randomize()
-	for node in $CanvasLayer/Weapons.get_children():
-		node.hide()
-	weapon = weapons[randi() % weapons.size()]
-	weapon.show()
+	new_random_weapon()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -106,3 +104,18 @@ func _on_AmmoLabelTimer_timeout():
 #	if (Globals.score % 1000) == 0:
 #		show_score()
 #		ammo_label_timer.start(1.0)
+
+func new_random_weapon():
+	for node in $CanvasLayer/Weapons.get_children():
+		node.hide()
+	var new_index
+	while true:
+		new_index = randi() % weapons.size()
+		if weapons[new_index] == weapon:
+			continue
+		else:
+			break
+	weapon = weapons[new_index]
+	weapon.show()
+	studio_trigger.value = new_index
+	studio_trigger.trigger()
