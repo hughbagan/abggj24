@@ -101,7 +101,6 @@ texture = ExtResource("6_56qdj")
 [node name="DeadClown2" type="Sprite2D" parent="."]
 position = Vector2(167, 380)
 rotation = -0.313815
-scale = Vector2(1, 1)
 texture = ExtResource("9_l8pdk")
 script = ExtResource("10_t0tmw")
 deltaOffset = 1.2
