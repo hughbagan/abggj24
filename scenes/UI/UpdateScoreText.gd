@@ -1,6 +1,6 @@
 extends Label
 
-var last_score = 0;
+var last_score = -1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
