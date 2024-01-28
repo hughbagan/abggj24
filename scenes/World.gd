@@ -33,7 +33,7 @@ func _get_random_offset():
 func spawn_enemies():
 	if Globals.n_alive_enemies < max_enemies and not spawner_waiting:
 		spawner_waiting = true
-		var m: RigidBody3D = Mob.instantiate()
+		var m = Mob.instantiate()
 		m.position = $SpawnPoint.position + _get_random_offset()
 		m.set_player(player)
 		add_child(m)
@@ -61,14 +61,14 @@ func _process(delta):
 	if $GameTimer.time_left <= 10.0:
 		$HUDLayer/HUD/Timer.set_modulate(Color(1.0, 0.0, 0.0))
 	background_x += delta
-	$WorldEnvironment.environment.set_bg_color(Color(
-		0.25*cos(background_x/10)+0.75,
-		0.25*cos((background_x+5)/10)+0.75,
-		0.25*cos((background_x+10)/10)+0.75
-#		sin((background_x/10)+1),
-#		sin(((background_x+4.0)/10)+1),
-#		sin(((background_x+8.0)/10)+1)
-	))
+#	$WorldEnvironment.environment.set_bg_color(Color(
+#		0.25*cos(background_x/10)+0.75,
+#		0.25*cos((background_x+5)/10)+0.75,
+#		0.25*cos((background_x+10)/10)+0.75
+##		sin((background_x/10)+1),
+##		sin(((background_x+4.0)/10)+1),
+##		sin(((background_x+8.0)/10)+1)
+#	))
 
 
 func refresh_music():

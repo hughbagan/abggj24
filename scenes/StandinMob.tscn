@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ciuv2qk880a58"]
 
 [ext_resource type="Script" path="res://scenes/StandinMob.gd" id="1_o8wf1"]
-[ext_resource type="PackedScene" uid="uid://tjyfuuog3ynh" path="res://scenes/clown_mob_body.tscn" id="2_puijl"]
+[ext_resource type="PackedScene" uid="uid://d1diqpah621js" path="res://scenes/clown_mob_body.tscn" id="2_puijl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_irojo"]
 friction = 0.0
