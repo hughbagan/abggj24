@@ -33,14 +33,14 @@ func _get_random_offset():
 func spawn_enemies():
 	if Globals.n_alive_enemies < max_enemies and not spawner_waiting:
 		spawner_waiting = true
-		var m: RigidBody3D = Mob.instantiate()
+		var m = Mob.instantiate()
 		m.position = $SpawnPoint.position + _get_random_offset()
 		m.set_player(player)
 		add_child(m)
 		m.make_walking()
 		await get_tree().create_timer(enemy_spawn_interval).timeout
 		spawner_waiting = false
-	
+
 
 
 func _ready():
@@ -61,27 +61,26 @@ func _process(delta):
 	if $GameTimer.time_left <= 10.0:
 		$HUDLayer/HUD/Timer.set_modulate(Color(1.0, 0.0, 0.0))
 	background_x += delta
-	$WorldEnvironment.environment.set_bg_color(Color(
-		0.25*cos(background_x/10)+0.75,
-		0.25*cos((background_x+5)/10)+0.75,
-		0.25*cos((background_x+10)/10)+0.75
-#		sin((background_x/10)+1),
-#		sin(((background_x+4.0)/10)+1),
-#		sin(((background_x+8.0)/10)+1)
-	))
-	
+#	$WorldEnvironment.environment.set_bg_color(Color(
+#		0.25*cos(background_x/10)+0.75,
+#		0.25*cos((background_x+5)/10)+0.75,
+#		0.25*cos((background_x+10)/10)+0.75
+##		sin((background_x/10)+1),
+##		sin(((background_x+4.0)/10)+1),
+##		sin(((background_x+8.0)/10)+1)
+#	))
+
 
 func refresh_music():
 	for pair in timer_to_music:
 		if $GameTimer.time_left > pair[0]:
-			print(cur_music)
 			if pair[1] == cur_music:
 				return
 			cur_music = pair[1]
 			studio_trigger.value = pair[1]
 			studio_trigger.trigger()
 			return
-			
+
 
 func _on_game_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/UI/GameOver.tscn")

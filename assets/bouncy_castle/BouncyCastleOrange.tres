@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://da0ivieamfwrf"]
+
+[ext_resource type="Shader" uid="uid://escx70qdf461" path="res://assets/bouncy_castle/BouncyCastleNodeMat.tres" id="1_2p7uf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2p7uf")
+shader_parameter/ColorTint = Color(0.909804, 0.427451, 0.12549, 1)

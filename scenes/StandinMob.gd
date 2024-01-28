@@ -1,4 +1,4 @@
-extends RigidBody3D
+class_name StandinMob extends RigidBody3D
 
 const MOVE_SPEED = 5.0
 const MOUSE_SENS = 0.3
@@ -40,9 +40,9 @@ func _ready():
 	nav.velocity_computed.connect(Callable(_on_velocity_computed))
 	get_node("/root/World/FloorArea3D").connect("body_entered", Callable(self, "_on_floor_entered"))
 	get_node("/root/World/FloorArea3D").connect("body_exited", Callable(self, "_on_floor_exited"))
-	
+
 	set_movement_target(player.global_position)
-	
+
 	Globals.n_alive_enemies += 1
 
 func set_player(p):
@@ -55,7 +55,7 @@ func _physics_process(delta):
 	if dead:
 		return
 	hitbox.global_position = global_position
-	
+
 	var target_position = $".".global_transform.origin
 	#camera.global_position = global_position
 
@@ -103,13 +103,16 @@ func make_walking():
 
 func kill():
 	dead = true
-	$CollisionShape3D.disabled = true
-	#anim_player.play("die")
-	Globals.score += 100
-	emit_signal("died")
+	Globals.n_alive_enemies -= 1
+	#queue_free()
+	$CollisionShape3D/ClownMob.die()
+	$CollisionShape3D.set_deferred("disabled", true)
+	#emit_signal("died")
+	await get_tree().create_timer(2).timeout
+	queue_free()
 
 func _on_body_entered(body):
-	if body is GridMap and not on_floor and hit:
+	if not on_floor and hit:
 		combo += 1
 		if combo > Globals.score:
 			Globals.score = combo
@@ -119,8 +122,7 @@ func _on_floor_entered(body):
 	if not body == self:
 		return
 	if not on_floor:
-		Globals.n_alive_enemies -= 1
-		queue_free()
+		kill()
 	on_floor = true
 	if combo > Globals.levels[Globals.level]:
 		# Level up!

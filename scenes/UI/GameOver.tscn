@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqcp1km2e23q1"]
+[gd_scene load_steps=12 format=3 uid="uid://cqcp1km2e23q1"]
 
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="1_imk3e"]
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_qyje4"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c3at64gs6fie0" path="res://assets/ui/again_button.png" id="6_56qdj"]
 [ext_resource type="EventAsset" uid="uid://c2kbinyfswmp" path="res://addons/FMOD/editor/resources/events/{3685aa65-cc1a-4264-8efc-5d86f4ab26cc}.tres" id="6_e8r1u"]
 [ext_resource type="Texture2D" uid="uid://mrwnihxh7qyp" path="res://assets/ui/quit_button.png" id="6_lrkox"]
+[ext_resource type="Texture2D" uid="uid://cric7qrebop7y" path="res://assets/ui/dead_clown.png" id="9_l8pdk"]
+[ext_resource type="Script" path="res://scenes/UI/Clown.gd" id="10_t0tmw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xefl3"]
 font_size = 112
@@ -95,3 +97,18 @@ offset_right = 215.0
 offset_bottom = 114.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_56qdj")
+
+[node name="DeadClown2" type="Sprite2D" parent="."]
+position = Vector2(167, 380)
+rotation = -0.313815
+scale = Vector2(1, 1)
+texture = ExtResource("9_l8pdk")
+script = ExtResource("10_t0tmw")
+deltaOffset = 1.2
+
+[node name="DeadClown" type="Sprite2D" parent="."]
+position = Vector2(955, 479)
+rotation = 0.403278
+texture = ExtResource("9_l8pdk")
+script = ExtResource("10_t0tmw")
+amplitude = -34.0

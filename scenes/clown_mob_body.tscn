@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tjyfuuog3ynh"]
+[gd_scene load_steps=14 format=3 uid="uid://d1diqpah621js"]
 
 [ext_resource type="PackedScene" uid="uid://cldr3hbj5kyve" path="res://assets/mobs/ClownMob.glb" id="1_4xnvp"]
 [ext_resource type="Script" path="res://scenes/clown_mob_body.gd" id="1_iwupv"]
@@ -109,9 +109,9 @@ shape = SubResource("CapsuleShape3D_qe1dc")
 disabled = true
 
 [node name="Physical Bone Shoulder-Left" type="PhysicalBone3D" parent="AdvArmature/Skeleton3D" index="4"]
-transform = Transform3D(0.980085, -0.0302099, -0.196373, -0.129436, -0.846869, -0.515886, -0.15073, 0.531036, -0.83387, 0.0893746, 0.308436, 0.364272)
+transform = Transform3D(0.980085, -0.0302099, -0.196373, -0.129436, -0.84687, -0.515886, -0.15073, 0.531036, -0.83387, 0.0893746, 0.308436, 0.364272)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60669e-07, 7.34611e-07, 0.111041)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60669e-07, 7.34616e-07, 0.111041)
 body_offset = Transform3D(1.00002, -3.55989e-05, 3.45707e-06, 1.2666e-06, -1.58586e-05, -1.00002, -2.01166e-07, 1.00005, -1.03735e-05, 4.76837e-07, 0.111043, 4.17233e-07)
 bone_name = "Shoulder-Left"
 joint_constraints/bias = 0.3
@@ -126,7 +126,7 @@ disabled = true
 [node name="Physical Bone Elbow-Left" type="PhysicalBone3D" parent="AdvArmature/Skeleton3D" index="5"]
 transform = Transform3D(0.985778, -0.0594034, -0.158219, -0.11455, -0.923152, -0.366955, -0.124257, 0.379843, -0.916946, 0.135508, 0.422165, 0.597843)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98863e-07, 2.28669e-05, 0.153754)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98863e-07, 2.2867e-05, 0.153754)
 body_offset = Transform3D(1.00016, 5.51343e-07, 5.06639e-07, -2.47359e-06, -1.01887e-06, -1.00024, -1.01328e-05, 1.00001, -0.000142523, -4.76837e-07, 0.153791, -9.53674e-07)
 bone_name = "Elbow-Left"
 joint_constraints/bias = 0.3
@@ -139,9 +139,9 @@ shape = SubResource("CapsuleShape3D_y4vii")
 disabled = true
 
 [node name="Physical Bone Hip-Right" type="PhysicalBone3D" parent="AdvArmature/Skeleton3D" index="6"]
-transform = Transform3D(1, -4.8168e-07, 1.94481e-07, 1.73668e-07, 0.662832, 0.748779, -4.89763e-07, -0.748796, 0.66282, -0.0139829, -0.452786, -0.268651)
+transform = Transform3D(1, -4.8168e-07, 1.94482e-07, 1.73668e-07, 0.662832, 0.748779, -4.89763e-07, -0.748796, 0.66282, -0.0139829, -0.452786, -0.268651)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.39545e-06, -3.16883e-07, 0.148459)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.39546e-06, -3.16883e-07, 0.148459)
 body_offset = Transform3D(1, 1.69507e-10, 4.27519e-10, 5.31841e-10, 3.09944e-06, -1, -5.11591e-12, 1.00002, 3.27825e-07, 6.39539e-06, 0.148459, 2.68221e-07)
 bone_name = "Hip-Right"
 joint_constraints/bias = 0.3
@@ -156,8 +156,8 @@ disabled = true
 [node name="Physical Bone Knee-Right" type="PhysicalBone3D" parent="AdvArmature/Skeleton3D" index="7"]
 transform = Transform3D(1, -2.83455e-07, 1.61041e-07, 1.05311e-08, 0.521926, 0.85299, -3.25894e-07, -0.852991, 0.521925, -0.0139882, -0.690445, -0.444454)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15874e-06, -1.5732e-06, 0.1483)
-body_offset = Transform3D(1, 2.5409e-11, 1.12479e-09, 1.19356e-09, 1.87755e-06, -0.999999, 1.0516e-12, 1, 1.96695e-06, 1.15857e-06, 0.1483, 1.2815e-06)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15873e-06, -1.5732e-06, 0.1483)
+body_offset = Transform3D(1, 2.5409e-11, 1.12472e-09, 1.19356e-09, 1.87755e-06, -0.999999, 1.0516e-12, 1, 1.96695e-06, 1.15857e-06, 0.1483, 1.2815e-06)
 bone_name = "Knee-Right"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0

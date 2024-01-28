@@ -1,0 +1,79 @@
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://escx70qdf461"]
+
+[ext_resource type="Texture2D" uid="uid://dat1e1hny5dc2" path="res://assets/bouncy_castle/HotspotMap_DefaultMaterial_BaseColor.png" id="1_64ie5"]
+[ext_resource type="Texture2D" uid="uid://fediqpdt8e6b" path="res://assets/bouncy_castle/HotspotMap_DefaultMaterial_Normal.png" id="2_ttsq7"]
+[ext_resource type="Texture2D" uid="uid://1ea2i7pq0p7m" path="res://assets/bouncy_castle/HotspotMap_DefaultMaterial_OcclusionRoughnessMetallic.png" id="3_n4oc7"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_h8bhr"]
+texture = ExtResource("1_64ie5")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_w0yjr"]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_h354f"]
+texture = ExtResource("2_ttsq7")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_iyd5m"]
+expanded_output_ports = [0]
+texture = ExtResource("3_n4oc7")
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_5ygwu"]
+parameter_name = "ColorTint"
+default_value_enabled = true
+default_value = Color(0.941176, 0.290196, 0.254902, 1)
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform vec4 ColorTint : source_color = vec4(0.941176, 0.290196, 0.254902, 1.000000);
+uniform sampler2D tex_frg_2 : source_color;
+uniform sampler2D tex_frg_6;
+uniform sampler2D tex_frg_5;
+
+
+
+void fragment() {
+// ColorParameter:7
+	vec4 n_out7p0 = ColorTint;
+
+
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// VectorOp:4
+	vec3 n_out4p0 = vec3(n_out7p0.xyz) * vec3(n_out2p0.xyz);
+
+
+// Texture2D:6
+	vec4 n_out6p0 = texture(tex_frg_6, UV);
+	float n_out6p1 = n_out6p0.r;
+
+
+// Texture2D:5
+	vec4 n_out5p0 = texture(tex_frg_5, UV);
+
+
+// Output:0
+	ALBEDO = n_out4p0;
+	AO = n_out6p1;
+	NORMAL = vec3(n_out5p0.xyz);
+
+
+}
+"
+nodes/fragment/0/position = Vector2(400, 180)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_h8bhr")
+nodes/fragment/2/position = Vector2(-400, 0)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVectorOp_w0yjr")
+nodes/fragment/4/position = Vector2(20, -80)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_h354f")
+nodes/fragment/5/position = Vector2(-400, 400)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTexture_iyd5m")
+nodes/fragment/6/position = Vector2(-800, 120)
+nodes/fragment/7/node = SubResource("VisualShaderNodeColorParameter_5ygwu")
+nodes/fragment/7/position = Vector2(-400, -200)
+nodes/fragment/connections = PackedInt32Array(2, 0, 4, 1, 5, 0, 0, 8, 7, 0, 4, 0, 6, 1, 0, 6, 4, 0, 0, 0)
