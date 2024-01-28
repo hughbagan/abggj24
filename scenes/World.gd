@@ -18,7 +18,7 @@ func _small_rand():
 	return n
 
 func _get_random_offset():
-	return Vector3(_small_rand(), _small_rand(), _small_rand()) * 3
+	return Vector3(_small_rand(), _small_rand(), 0) * 2
 
 func spawn_enemies():
 	if Globals.n_alive_enemies < max_enemies and not spawner_waiting:
