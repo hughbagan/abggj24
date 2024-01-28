@@ -4,18 +4,32 @@ extends Node3D
 
 var background_x = 0.0
 
-var MAX_ENEMIES = 5
+var max_enemies = 5
 var ENEMY_SPAWN_INTERVAL = 2.7
+var enemy_spawn_interval = BASE_SPAWN_INTERVAL
 var Mob = preload("res://scenes/StandinMob.tscn")
+var spawner_waiting = false
+
+func _small_rand():
+	var n = (randi() % 7) / 5.0
+	var is_pos = randi() % 2
+	if is_pos < 1:
+		n = n * -1
+	return n
+
+func _get_random_offset():
+	return Vector3(_small_rand(), _small_rand(), 0) * 2
 
 func spawn_enemies():
-	while Globals.n_alive_enemies < MAX_ENEMIES:
+	if Globals.n_alive_enemies < max_enemies and not spawner_waiting:
+		spawner_waiting = true
 		var m: RigidBody3D = Mob.instantiate()
-		m.position = $SpawnPoint.position
+		m.position = $SpawnPoint.position + _get_random_offset()
 		m.set_player(player)
 		add_child(m)
 		m.make_walking()
-		await get_tree().create_timer(ENEMY_SPAWN_INTERVAL).timeout
+		await get_tree().create_timer(enemy_spawn_interval).timeout
+		spawner_waiting = false
 	
 
 
@@ -29,6 +43,7 @@ func _ready():
 	$HUDLayer/HUD/Timer.text = str(floor($GameTimer.time_left))
 
 func _process(delta):
+	max_enemies = (Globals.level + 1) * 3
 	spawn_enemies()
 	$HUDLayer/HUD/Timer.text = str(floor($GameTimer.time_left))
 	if $GameTimer.time_left <= 10.0:
