@@ -88,11 +88,8 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{f7dae275-a6e1-4bfe-b803-d064289d6b0f}">
-		<property name="start">
-			<value>1</value>
-		</property>
 		<property name="startOffset">
-			<value>25</value>
+			<value>20</value>
 		</property>
 		<property name="volume">
 			<value>-5</value>
@@ -105,6 +102,9 @@
 		</relationship>
 	</object>
 	<object class="EventSound" id="{ed2ba12b-2574-44e5-ad34-f79518666892}">
+		<property name="start">
+			<value>1</value>
+		</property>
 		<relationship name="event">
 			<destination>{473ed5ef-0675-47e4-bbe2-520beca9da7f}</destination>
 		</relationship>
@@ -134,8 +134,20 @@
 		<property name="holdTime">
 			<value>40</value>
 		</property>
+		<property name="decayTime">
+			<value>461.538452</value>
+		</property>
+		<property name="decayShape">
+			<value>0.210113868</value>
+		</property>
 		<property name="sustainValue">
-			<value>-10</value>
+			<value>-34.0333328</value>
+		</property>
+		<property name="releaseTime">
+			<value>0</value>
+		</property>
+		<property name="releaseShape">
+			<value>0.186100796</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>

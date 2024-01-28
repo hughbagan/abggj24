@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{473ed5ef-0675-47e4-bbe2-520beca9da7f}">
 		<property name="name">
-			<value>Nested Event</value>
+			<value>Banana hit</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -129,8 +129,6 @@
 		<relationship name="effects">
 			<destination>{7464ca70-e52c-4d29-9a11-e585db055daa}</destination>
 			<destination>{b54be9df-8b0d-422a-8e71-5a8be98f4d36}</destination>
-			<destination>{ec8d499e-8348-4428-a10c-bd75857b042e}</destination>
-			<destination>{912cd4a2-ca7a-4271-8858-0d24cbf81525}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{15976f12-a4c5-4ce7-85ee-1ff6073bb65a}" />
@@ -157,34 +155,16 @@
 	<object class="MixerBusFader" id="{7464ca70-e52c-4d29-9a11-e585db055daa}" />
 	<object class="MultibandEqEffect" id="{b54be9df-8b0d-422a-8e71-5a8be98f4d36}">
 		<property name="filterTypeA">
-			<value>10</value>
+			<value>9</value>
 		</property>
 		<property name="frequencyA">
-			<value>539.192993</value>
+			<value>4370.81787</value>
 		</property>
 		<property name="qualityA">
-			<value>2.41379333</value>
+			<value>0.299999982</value>
+		</property>
+		<property name="gainA">
+			<value>20.6896553</value>
 		</property>
 	</object>
-	<object class="SFXReverbEffect" id="{ec8d499e-8348-4428-a10c-bd75857b042e}">
-		<property name="earlyDelay">
-			<value>7</value>
-		</property>
-		<property name="lateDelay">
-			<value>11</value>
-		</property>
-		<property name="HFDecayRatio">
-			<value>59</value>
-		</property>
-		<property name="highCut">
-			<value>7800</value>
-		</property>
-		<property name="earlyLateMix">
-			<value>87</value>
-		</property>
-		<property name="wetLevel">
-			<value>-5.5</value>
-		</property>
-	</object>
-	<object class="DistortionEffect" id="{912cd4a2-ca7a-4271-8858-0d24cbf81525}" />
 </objects>

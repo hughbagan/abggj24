@@ -39,6 +39,8 @@ func _ready():
 		node.hide()
 	weapon = weapons[randi() % weapons.size()]
 	weapon.show()
+	$StudioGlobalParameterTrigger.value = 1
+	$StudioGlobalParameterTrigger.trigger()
 
 func _input(event):
 	if event is InputEventMouseMotion:

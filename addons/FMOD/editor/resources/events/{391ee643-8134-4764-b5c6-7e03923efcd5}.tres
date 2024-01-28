@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://ctk5ebk8f3arr"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/hit_sfx"
+guid = "{391ee643-8134-4764-b5c6-7e03923efcd5}"
+name = "hit_sfx"
