@@ -75,7 +75,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Actor" parent="." instance=ExtResource("7_1fp6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54642, 1.80658, -6.03551)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94146, 4.51034, -6.03551)
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 layer = 2

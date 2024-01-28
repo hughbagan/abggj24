@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8xhmsicg8x6q"]
+[gd_scene load_steps=23 format=3 uid="uid://c8xhmsicg8x6q"]
 
 [ext_resource type="Texture2D" uid="uid://dcgk416cuol8g" path="res://assets/reticle.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://cghhs8a733dq" path="res://assets/banana.png" id="2_gy0pw"]
@@ -7,6 +7,12 @@
 [ext_resource type="FontFile" uid="uid://bfnrupvkqq45c" path="res://assets/dpcomic-crowned/dpcomic-crowned.ttf" id="4"]
 [ext_resource type="Texture2D" uid="uid://ckne78h5w632q" path="res://assets/hammer.png" id="5_cdmbe"]
 [ext_resource type="EventAsset" uid="uid://c2kbinyfswmp" path="res://addons/FMOD/editor/resources/events/{3685aa65-cc1a-4264-8efc-5d86f4ab26cc}.tres" id="5_hssu4"]
+[ext_resource type="Texture2D" uid="uid://ti85kmdtka7j" path="res://assets/bat.png" id="6_tnxrm"]
+[ext_resource type="Texture2D" uid="uid://v8pmxpilu2wf" path="res://assets/baseball.png" id="7_mva7o"]
+[ext_resource type="Texture2D" uid="uid://dsihttb7wx7to" path="res://assets/bass.png" id="8_yujs1"]
+[ext_resource type="Texture2D" uid="uid://nsvlvov8cqnk" path="res://assets/fart.png" id="9_yccf7"]
+[ext_resource type="Texture2D" uid="uid://065a4j5tal3y" path="res://assets/sword.png" id="10_m4jmg"]
+[ext_resource type="Texture2D" uid="uid://c0riwij08vsnp" path="res://assets/bomb.png" id="11_qnltl"]
 
 [sub_resource type="CapsuleShape3D" id="1"]
 radius = 0.75
@@ -162,7 +168,50 @@ scale = Vector2(-1.17473, 1.0127)
 texture = ExtResource("5_cdmbe")
 centered = false
 
+[node name="Bat" type="Sprite2D" parent="CanvasLayer/Weapons"]
+position = Vector2(1, 25)
+rotation = 3.14159
+scale = Vector2(-1.17473, 1.0127)
+texture = ExtResource("6_tnxrm")
+centered = false
+
+[node name="Baseball" type="Sprite2D" parent="CanvasLayer/Weapons"]
+position = Vector2(1, 25)
+rotation = 3.14159
+scale = Vector2(-0.569314, 0.490789)
+texture = ExtResource("7_mva7o")
+centered = false
+
+[node name="Bass" type="Sprite2D" parent="CanvasLayer/Weapons"]
+position = Vector2(1, 25)
+rotation = 3.14159
+scale = Vector2(-0.569314, 0.490789)
+texture = ExtResource("8_yujs1")
+centered = false
+
+[node name="Fart" type="Sprite2D" parent="CanvasLayer/Weapons"]
+position = Vector2(1, 25)
+rotation = 3.14159
+scale = Vector2(-0.569314, 0.490789)
+texture = ExtResource("9_yccf7")
+centered = false
+
+[node name="Sword" type="Sprite2D" parent="CanvasLayer/Weapons"]
+position = Vector2(8, 18)
+rotation = 3.14159
+scale = Vector2(-0.496176, 0.427739)
+texture = ExtResource("10_m4jmg")
+centered = false
+
+[node name="Bomb" type="Sprite2D" parent="CanvasLayer/Weapons"]
+position = Vector2(8, 18)
+rotation = 3.14159
+scale = Vector2(-0.360159, 0.310483)
+texture = ExtResource("11_qnltl")
+centered = false
+
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
