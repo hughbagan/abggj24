@@ -59,7 +59,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		move_vec.x += 1
 	velocity = move_vec.normalized().rotated(Vector3(0,1,0), rotation.y) * MOVE_SPEED
-	
+
 	if move_vec != Vector3():
 		move_and_slide()
 

@@ -10,16 +10,22 @@ config_version=5
 
 [application]
 
-config/name="abggj24"
-run/main_scene="res://scenes/World.tscn"
+config/name="HurrayViolence"
+config/description="These clowns are SO ANNOYING! Whack them into the walls and ceiling for a high score, but don't let them touch the floor!"
+run/main_scene="res://scenes/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="res://assets/clown_icon.png"
 
 [autoload]
 
 PauseManager="*res://scenes/PauseManager.gd"
 Globals="*res://scenes/Globals.gd"
 FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
+
+[display]
+
+window/size/mode=2
 
 [fmod]
 
