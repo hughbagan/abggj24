@@ -1,12 +1,29 @@
-[gd_scene load_steps=16 format=3 uid="uid://bpnknq6nv54mo"]
+[gd_scene load_steps=33 format=3 uid="uid://bpnknq6nv54mo"]
 
 [ext_resource type="PackedScene" uid="uid://c8xhmsicg8x6q" path="res://scenes/Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://j51j6smepxvg" path="res://assets/bouncy_castle/block_4x_4x_2-Red.tscn" id="4_afrcp"]
 [ext_resource type="MeshLibrary" uid="uid://j0nj45j27k7y" path="res://assets/tiles.meshlib" id="5"]
+[ext_resource type="PackedScene" uid="uid://cmd6u8cgo41kk" path="res://assets/bouncy_castle/block_4x_2x_2-Yellow.tscn" id="5_g5dqw"]
 [ext_resource type="PackedScene" uid="uid://haatw24xcif3" path="res://scenes/UI/HUD.tscn" id="5_ltw2r"]
 [ext_resource type="Script" path="res://scenes/World.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://88whtkdd6b6q" path="res://assets/bouncy_castle/block_8x_2x_2-Orange.tscn" id="6_e0ky0"]
+[ext_resource type="PackedScene" uid="uid://lqd6h7eqt7ck" path="res://assets/bouncy_castle/block_8x_2x_2-Red.tscn" id="7_8pmvo"]
 [ext_resource type="ParameterAsset" uid="uid://dbexoytgb6p83" path="res://addons/FMOD/editor/resources/parameters/{d8a4850f-211b-4412-a559-c4cea53946af}.tres" id="7_dj858"]
+[ext_resource type="PackedScene" uid="uid://b4fnsng3r3pfh" path="res://assets/bouncy_castle/block_8x_4x_2-Yellow.tscn" id="8_bntml"]
 [ext_resource type="PackedScene" uid="uid://barq25rmi4rds" path="res://scenes/UI/PauseScreen.tscn" id="8_nsv6c"]
 [ext_resource type="EventAsset" uid="uid://bcrxith4wlw5a" path="res://addons/FMOD/editor/resources/events/{18c95f7e-007a-4aa2-874e-63f7dc942c36}.tres" id="8_uv0od"]
+[ext_resource type="PackedScene" uid="uid://wy0g6w8xgq6u" path="res://assets/bouncy_castle/block_8x_4x_2-Red.tscn" id="9_ys6ob"]
+[ext_resource type="PackedScene" uid="uid://bbgb40arp6nxl" path="res://assets/bouncy_castle/block_2x_2x_2-Orange.tscn" id="10_tly00"]
+[ext_resource type="PackedScene" uid="uid://d1vwq4syp64lh" path="res://assets/bouncy_castle/block_4x_2x_2-Red.tscn" id="11_j6d84"]
+[ext_resource type="PackedScene" uid="uid://dykqjuvbnybct" path="res://assets/bouncy_castle/block_4x_4x_2-Yellow.tscn" id="12_xm5tx"]
+[ext_resource type="PackedScene" uid="uid://5pa5n4a0to1t" path="res://assets/bouncy_castle/block_4x_2x_2-Orange.tscn" id="13_nlsyu"]
+[ext_resource type="PackedScene" uid="uid://4kawf32bicrx" path="res://assets/bouncy_castle/block_8x_2x_2-Yellow.tscn" id="14_w884c"]
+[ext_resource type="PackedScene" uid="uid://cr1dnahew0802" path="res://assets/bouncy_castle/block_2x_2x_2-Red.tscn" id="15_v6u7w"]
+[ext_resource type="PackedScene" uid="uid://1biifq3vhrjl" path="res://assets/bouncy_castle/block_8x_8x_8-Orange.tscn" id="16_tnu5c"]
+[ext_resource type="PackedScene" uid="uid://cv8vensrvkt0k" path="res://assets/bouncy_castle/block_4x_4x_4-Yellow.tscn" id="17_w1457"]
+[ext_resource type="PackedScene" uid="uid://62s2ck5bctv6" path="res://assets/bouncy_castle/block_8x_8x_2-Yellow.tscn" id="22_fgamf"]
+[ext_resource type="PackedScene" uid="uid://dwf2gd30w2jdj" path="res://assets/bouncy_castle/block_8x_4x_4-Orange.tscn" id="23_21mkk"]
+[ext_resource type="PackedScene" uid="uid://cclpanfvvui5p" path="res://assets/bouncy_castle/block_8x_8x_4-Orange.tscn" id="24_jxmbg"]
 
 [sub_resource type="Sky" id="2"]
 
@@ -55,7 +72,7 @@ name = "SFX"
 script = ExtResource("6")
 
 [node name="Player" parent="." instance=ExtResource("2")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.7896, 1.09375, -5.83121)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.7896, 0.09375, -35.8312)
 
 [node name="SpawnPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07134, 2.26394, -5.84482)
@@ -73,6 +90,315 @@ data = {
 "cells": PackedInt32Array(0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 0, 65528, 0, 0, 65529, 0, 1441793, 65530, 0, 1441793, 65531, 0, 1, 65532, 0, 1, 65533, 0, 1, 65534, 0, 1, 65535, 0, 1, 0, 1, 1, 1, 1, 1, 65528, 1, 0, 65529, 1, 1441793, 65530, 1, 1, 65533, 1, 1, 65534, 1, 1, 65535, 1, 1, 0, 2, 0, 1, 2, 0, 65535, 2, 0, 0, 65527, 0, 65528, 65527, 0, 65529, 65527, 0, 65530, 65527, 0, 65531, 65527, 0, 65532, 65527, 0, 65533, 65527, 0, 65534, 65527, 0, 65535, 65527, 0, 0, 65528, 1441793, 65533, 65528, 1441793, 65534, 65528, 1441793, 65535, 65528, 1441793, 0, 65529, 1441793, 65534, 65529, 1441793, 65535, 65529, 1441793, 0, 65530, 1441793, 65528, 65530, 0, 65534, 65530, 1441793, 65535, 65530, 1441793, 0, 65531, 1, 3, 65531, 0, 65528, 65531, 0, 65530, 65531, 1, 65531, 65531, 1, 65534, 65531, 1, 65535, 65531, 1, 0, 65532, 1, 1, 65532, 1, 65528, 65532, 0, 65530, 65532, 1, 65531, 65532, 1, 65534, 65532, 1, 65535, 65532, 1, 0, 65533, 1, 1, 65533, 1, 65528, 65533, 0, 65534, 65533, 1, 65535, 65533, 1, 0, 65534, 1, 1, 65534, 1, 3, 65534, 0, 65528, 65534, 0, 65529, 65534, 1441793, 65530, 65534, 1, 65531, 65534, 1, 65534, 65534, 1, 65535, 65534, 1, 0, 65535, 1, 1, 65535, 1, 2, 65535, 1, 3, 65535, 0, 65528, 65535, 0, 65529, 65535, 1441793, 65530, 65535, 1, 65531, 65535, 1, 65532, 65535, 1, 65533, 65535, 1, 65534, 65535, 1, 65535, 65535, 1, 2, 2, 0, 2, 1, 1, 3, 2, 0, 3, 1, 0, 65528, 2, 0, 65529, 2, 0, 65530, 2, 0, 65532, 2, 0, 65531, 2, 0, 65531, 1, 1, 65532, 1, 1, 65533, 2, 0, 65534, 2, 0, 65530, 65533, 1, 65529, 65533, 1, 65529, 65532, 1, 65529, 65531, 1, 65528, 65529, 0, 65528, 65528, 0, 65529, 65528, 1, 65530, 65528, 1, 65531, 65528, 1, 65531, 65529, 1, 65532, 65529, 1, 65532, 65530, 1, 65531, 65530, 1, 65530, 65530, 1, 65529, 65530, 1, 65529, 65529, 1, 65530, 65529, 1, 65532, 65528, 1, 65533, 65529, 1, 65533, 65530, 1, 65533, 65531, 1, 65533, 65532, 1, 65533, 65533, 1, 65532, 65533, 1, 65531, 65533, 1, 65532, 65534, 1, 65533, 65534, 1, 65532, 65531, 1, 65532, 65532, 1, 2, 65532, 1, 3, 65533, 0, 2, 65534, 1, 2, 65533, 1, 2, 65531, 1, 1, 65531, 1, 1, 65530, 1, 1, 65529, 1, 1, 65528, 1, 1, 65527, 0, 2, 65527, 0, 2, 65528, 1, 2, 65529, 1, 2, 65530, 1, 3, 65527, 0, 3, 65528, 0, 3, 65529, 0, 3, 65532, 0, 131064, 65527, 0, 131065, 65527, 0, 131066, 65527, 0, 131067, 65527, 0, 131068, 65527, 0, 131069, 65527, 0, 131070, 65527, 0, 131071, 65527, 0, 65536, 65527, 0, 65537, 65527, 0, 65538, 65527, 0, 65539, 65527, 0, 65539, 65528, 0, 65539, 65529, 0, 65539, 65530, 0, 65539, 65531, 0, 65539, 65532, 0, 65539, 65533, 0, 65539, 65534, 0, 65539, 65535, 0, 65539, 0, 0, 65539, 1, 0, 65539, 2, 0, 65538, 2, 0, 65537, 2, 0, 65536, 2, 0, 131071, 2, 0, 131070, 2, 0, 131069, 2, 0, 131068, 2, 0, 131067, 2, 0, 131066, 2, 0, 131065, 2, 0, 131064, 2, 0, 131064, 65528, 0, 131064, 65529, 0, 131064, 65530, 0, 131064, 65531, 0, 131064, 65532, 0, 131064, 65533, 0, 131064, 65534, 0, 131064, 65535, 0, 131064, 0, 0, 131064, 1, 0, 196600, 65527, 0, 196601, 65527, 0, 196602, 65527, 0, 196603, 65527, 0, 196604, 65527, 0, 196605, 65527, 0, 196606, 65527, 0, 196607, 65527, 0, 131072, 65527, 0, 131073, 65527, 0, 131074, 65527, 0, 131075, 65527, 0, 131075, 65528, 0, 131075, 65529, 0, 131075, 65530, 0, 131075, 65531, 0, 131075, 65532, 0, 131075, 65533, 0, 131075, 65534, 0, 131075, 65535, 0, 131075, 0, 0, 131075, 1, 0, 131075, 2, 0, 131074, 2, 0, 131073, 2, 0, 131072, 2, 0, 196607, 2, 0, 196606, 2, 0, 196605, 2, 0, 196604, 2, 0, 196603, 2, 0, 196602, 2, 0, 196601, 2, 0, 196600, 2, 0, 196600, 1, 0, 196600, 0, 0, 196600, 65535, 0, 196600, 65534, 0, 196600, 65533, 0, 196600, 65532, 0, 196600, 65531, 0, 196600, 65530, 0, 196600, 65529, 0, 196600, 65528, 0, 262136, 65527, 0, 262137, 65527, 0, 262138, 65527, 0, 262139, 65527, 0, 262140, 65527, 0, 262141, 65527, 0, 262142, 65527, 0, 262143, 65527, 0, 196608, 65527, 0, 196609, 65527, 0, 196610, 65527, 0, 196611, 65527, 0, 196611, 65528, 0, 196611, 65529, 0, 196611, 65530, 0, 196611, 65531, 0, 196611, 65532, 0, 196611, 65533, 0, 196611, 65534, 0, 196611, 65535, 0, 196611, 0, 0, 196611, 1, 0, 196611, 2, 0, 196610, 2, 0, 196609, 2, 0, 196608, 2, 0, 262143, 2, 0, 262142, 2, 0, 262141, 2, 0, 262140, 2, 0, 262139, 2, 0, 262138, 2, 0, 262137, 2, 0, 262136, 2, 0, 262136, 1, 0, 262136, 0, 0, 262136, 65535, 0, 262136, 65534, 0, 262136, 65533, 0, 262136, 65532, 0, 262136, 65531, 0, 262136, 65530, 0, 262136, 65529, 0, 262136, 65528, 0, 327672, 65527, 0, 327673, 65527, 0, 327674, 65527, 0, 327675, 65527, 0, 327676, 65527, 0, 327677, 65527, 0, 327678, 65527, 0, 327679, 65527, 0, 262144, 65527, 0, 262145, 65527, 0, 262146, 65527, 0, 262147, 65527, 0, 262147, 65528, 0, 262147, 65529, 0, 262147, 65530, 0, 262147, 65531, 0, 262147, 65532, 0, 262147, 65533, 0, 262147, 65534, 0, 262147, 65535, 0, 262147, 0, 0, 262147, 1, 0, 262147, 2, 0, 262146, 2, 0, 262145, 2, 0, 262144, 2, 0, 327679, 2, 0, 327678, 2, 0, 327677, 2, 0, 327676, 2, 0, 327675, 2, 0, 327674, 2, 0, 327673, 2, 0, 327672, 2, 0, 327672, 1, 0, 327672, 0, 0, 327672, 65535, 0, 327672, 65534, 0, 327672, 65533, 0, 327672, 65532, 0, 327672, 65531, 0, 327672, 65530, 0, 327672, 65529, 0, 327672, 65528, 0, 393208, 65527, 0, 393209, 65527, 0, 393210, 65527, 0, 393211, 65527, 0, 393212, 65527, 0, 393213, 65527, 0, 393214, 65527, 0, 393215, 65527, 0, 327680, 65527, 0, 327681, 65527, 0, 327682, 65527, 0, 327683, 65527, 0, 327683, 65528, 0, 327683, 65529, 0, 327683, 65530, 0, 327683, 65531, 0, 327683, 65532, 0, 327683, 65533, 0, 327683, 65534, 0, 327683, 65535, 0, 327683, 0, 0, 327683, 1, 0, 327683, 2, 0, 327682, 2, 0, 327681, 2, 0, 327680, 2, 0, 393215, 2, 0, 393214, 2, 0, 393213, 2, 0, 393212, 2, 0, 393211, 2, 0, 393210, 2, 0, 393209, 2, 0, 393208, 2, 0, 393208, 1, 0, 393208, 0, 0, 393208, 65535, 0, 393208, 65534, 0, 393208, 65533, 0, 393208, 65532, 0, 393208, 65531, 0, 393208, 65530, 0, 393208, 65529, 0, 393208, 65528, 0, 458744, 65527, 0, 458745, 65527, 0, 458746, 65527, 0, 458747, 65527, 0, 458748, 65527, 0, 458749, 65527, 0, 458750, 65527, 0, 458751, 65527, 0, 393216, 65527, 0, 393217, 65527, 0, 393218, 65527, 0, 393219, 65527, 0, 393219, 65528, 0, 393219, 65529, 0, 393219, 65530, 0, 393219, 65531, 0, 393219, 65532, 0, 393219, 65533, 0, 393219, 65534, 0, 393219, 65535, 0, 393219, 0, 0, 393219, 1, 0, 393219, 2, 0, 393218, 2, 0, 393217, 2, 0, 393216, 2, 0, 458751, 2, 0, 458750, 2, 0, 458749, 2, 0, 458748, 2, 0, 458747, 2, 0, 458746, 2, 0, 458745, 2, 0, 458744, 2, 0, 458744, 1, 0, 458744, 0, 0, 458744, 65535, 0, 458744, 65534, 0, 458744, 65533, 0, 458744, 65532, 0, 458744, 65531, 0, 458744, 65530, 0, 458744, 65529, 0, 458744, 65528, 0, 524280, 65527, 0, 524281, 65527, 0, 524282, 65527, 0, 524283, 65527, 0, 524284, 65527, 0, 524285, 65527, 0, 524286, 65527, 0, 524287, 65527, 0, 458752, 65527, 0, 458753, 65527, 0, 458754, 65527, 0, 458755, 65527, 0, 458755, 65528, 0, 458755, 65529, 0, 458755, 65530, 0, 458755, 65531, 0, 458755, 65532, 0, 458755, 65533, 0, 458755, 65534, 0, 458755, 65535, 0, 458755, 0, 0, 458755, 1, 0, 458755, 2, 0, 458754, 2, 0, 458753, 2, 0, 458752, 2, 0, 524287, 2, 0, 524286, 2, 0, 524285, 2, 0, 524284, 2, 0, 524283, 2, 0, 524282, 2, 0, 524281, 2, 0, 524280, 2, 0, 524280, 1, 0, 524280, 0, 0, 524280, 65535, 0, 524280, 65534, 0, 524280, 65533, 0, 524280, 65532, 0, 524280, 65531, 0, 524280, 65530, 0, 524280, 65529, 0, 524280, 65528, 0, 589816, 65527, 0, 589817, 65527, 0, 589818, 65527, 0, 589819, 65527, 0, 589820, 65527, 0, 589821, 65527, 0, 589822, 65527, 0, 589823, 65527, 0, 524288, 65527, 0, 524289, 65527, 0, 524290, 65527, 0, 524291, 65527, 0, 524291, 65528, 0, 524291, 65529, 0, 524291, 65530, 0, 524291, 65531, 0, 524291, 65532, 0, 524291, 65533, 0, 524291, 65534, 0, 524291, 65535, 0, 524291, 0, 0, 524291, 1, 0, 524291, 2, 0, 524290, 2, 0, 524289, 2, 0, 524288, 2, 0, 589823, 2, 0, 589822, 2, 0, 589821, 2, 0, 589820, 2, 0, 589819, 2, 0, 589818, 2, 0, 589817, 2, 0, 589816, 2, 0, 589816, 1, 0, 589816, 0, 0, 589816, 65535, 0, 589816, 65534, 0, 589816, 65533, 0, 589816, 65532, 0, 589816, 65531, 0, 589816, 65530, 0, 589816, 65529, 0, 589816, 65528, 0, 655352, 65527, 0, 655353, 65527, 0, 655354, 65527, 0, 655355, 65527, 0, 655356, 65527, 0, 655357, 65527, 0, 655358, 65527, 0, 655359, 65527, 0, 589824, 65527, 0, 589825, 65527, 0, 589826, 65527, 0, 589827, 65527, 0, 589827, 65528, 0, 589827, 65529, 0, 589827, 65530, 0, 589827, 65531, 0, 589827, 65532, 0, 589827, 65533, 0, 589827, 65534, 0, 589827, 65535, 0, 589827, 0, 0, 589827, 1, 0, 589827, 2, 0, 589826, 2, 0, 589825, 2, 0, 589824, 2, 0, 655359, 2, 0, 655358, 2, 0, 655357, 2, 0, 655356, 2, 0, 655355, 2, 0, 655354, 2, 0, 655353, 2, 0, 655352, 2, 0, 655352, 1, 0, 655352, 0, 0, 655352, 65535, 0, 655352, 65534, 0, 655352, 65533, 0, 655352, 65532, 0, 655352, 65531, 0, 655352, 65530, 0, 655352, 65529, 0, 655352, 65528, 0, 720888, 65527, 0, 720889, 65527, 0, 720890, 65527, 0, 720891, 65527, 0, 720892, 65527, 0, 720893, 65527, 0, 720894, 65527, 0, 720895, 65527, 0, 655360, 65527, 0, 655361, 65527, 0, 655362, 65527, 0, 655363, 65527, 0, 655363, 65528, 0, 655363, 65529, 0, 655363, 65530, 0, 655363, 65531, 0, 655363, 65532, 0, 655363, 65533, 0, 655363, 65534, 0, 655363, 65535, 0, 655363, 0, 0, 655363, 1, 0, 655363, 2, 0, 655362, 2, 0, 655361, 2, 0, 655360, 2, 0, 720895, 2, 0, 720894, 2, 0, 720893, 2, 0, 720892, 2, 0, 720891, 2, 0, 720890, 2, 0, 720889, 2, 0, 720888, 2, 0, 720888, 1, 0, 720888, 0, 0, 720888, 65535, 0, 720888, 65534, 0, 720888, 65533, 0, 720888, 65532, 0, 720888, 65531, 0, 720888, 65530, 0, 720888, 65529, 0, 720888, 65528, 0, 786424, 65527, 0, 786425, 65527, 0, 786426, 65527, 0, 786427, 65527, 0, 786428, 65527, 0, 786429, 65527, 0, 786430, 65527, 0, 786431, 65527, 0, 720896, 65527, 0, 720897, 65527, 0, 720898, 65527, 0, 720899, 65527, 0, 720899, 65528, 0, 720898, 65528, 0, 720897, 65528, 0, 720896, 65528, 0, 786431, 65528, 0, 786430, 65528, 0, 786429, 65528, 0, 786428, 65528, 0, 786427, 65528, 0, 786426, 65528, 0, 786425, 65528, 0, 786424, 65528, 0, 786424, 65529, 0, 786425, 65529, 0, 786426, 65529, 0, 786427, 65529, 0, 786428, 65529, 0, 786429, 65529, 0, 786430, 65529, 0, 786431, 65529, 0, 720896, 65529, 0, 720897, 65529, 0, 720898, 65529, 0, 720899, 65529, 0, 720899, 65530, 0, 720898, 65530, 0, 720897, 65530, 0, 720896, 65530, 0, 786431, 65530, 0, 786430, 65530, 0, 786429, 65530, 0, 786428, 65530, 0, 786427, 65530, 0, 786426, 65530, 0, 786425, 65530, 0, 786424, 65530, 0, 786424, 65531, 0, 786425, 65531, 0, 786426, 65531, 0, 786427, 65531, 0, 786428, 65531, 0, 786429, 65531, 0, 786430, 65531, 0, 786431, 65531, 0, 720896, 65531, 0, 720897, 65531, 0, 720898, 65531, 0, 720899, 65531, 0, 720899, 65532, 0, 720898, 65532, 0, 720897, 65532, 0, 720896, 65532, 0, 786431, 65532, 0, 786430, 65532, 0, 786429, 65532, 0, 786428, 65532, 0, 786427, 65532, 0, 786426, 65532, 0, 786425, 65532, 0, 786424, 65532, 0, 786424, 65533, 0, 786425, 65533, 0, 786426, 65533, 0, 786427, 65533, 0, 786428, 65533, 0, 786429, 65533, 0, 786430, 65533, 0, 786431, 65533, 0, 720896, 65533, 0, 720897, 65533, 0, 720898, 65533, 0, 720899, 65533, 0, 720899, 65534, 0, 720898, 65534, 0, 720897, 65534, 0, 720896, 65534, 0, 786431, 65534, 0, 786430, 65534, 0, 786429, 65534, 0, 786428, 65534, 0, 786427, 65534, 0, 786426, 65534, 0, 786425, 65534, 0, 786424, 65534, 0, 786424, 65535, 0, 786425, 65535, 0, 786426, 65535, 0, 786427, 65535, 0, 786428, 65535, 0, 786429, 65535, 0, 786430, 65535, 0, 786431, 65535, 0, 720896, 65535, 0, 720897, 65535, 0, 720898, 65535, 0, 720899, 65535, 0, 720899, 0, 0, 720898, 0, 0, 720897, 0, 0, 720896, 0, 0, 786431, 0, 0, 786430, 0, 0, 786429, 0, 0, 786428, 0, 0, 786427, 0, 0, 786426, 0, 0, 786425, 0, 0, 786424, 0, 0, 786424, 1, 0, 786425, 1, 0, 786426, 1, 0, 786427, 1, 0, 786428, 1, 0, 786429, 1, 0, 786430, 1, 0, 720899, 1, 0, 720898, 1, 0, 720897, 1, 0, 720896, 1, 0, 786431, 1, 0, 720898, 2, 0, 720899, 2, 0, 720897, 2, 0, 720896, 2, 0, 786431, 2, 0, 786430, 2, 0, 786429, 2, 0, 786428, 2, 0, 786427, 2, 0, 786426, 2, 0, 786425, 2, 0, 786424, 2, 0, 3, 65530, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Block-4x4x2" parent="NavigationRegion3D/GridMap" instance=ExtResource("4_afrcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -36)
+
+[node name="Block-4x2x3" parent="NavigationRegion3D/GridMap" instance=ExtResource("5_g5dqw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -33)
+
+[node name="Block-4x2x2" parent="NavigationRegion3D/GridMap" instance=ExtResource("5_g5dqw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -39)
+
+[node name="Block-8x2x2" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, -1, -36)
+
+[node name="Block-8x2x3" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -1, -36)
+
+[node name="Block-8x2x4" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -25)
+
+[node name="Block-8x2x5" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -25)
+
+[node name="Block-8x2x6" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, -25)
+
+[node name="Block-8x2x7" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -47)
+
+[node name="Block-8x2x8" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -41)
+
+[node name="Block-8x2x9" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -31)
+
+[node name="Block-8x2x10" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -47)
+
+[node name="Block-8x2x11" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, -47)
+
+[node name="Block-8x4x2" parent="NavigationRegion3D/GridMap" instance=ExtResource("8_bntml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -28)
+
+[node name="Block-8x4x3" parent="NavigationRegion3D/GridMap" instance=ExtResource("8_bntml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -44)
+
+[node name="Block-8x4x4" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, -1, -30)
+
+[node name="Block-8x4x5" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, -1, -42)
+
+[node name="Block-8x4x8" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 2, -44)
+
+[node name="Block-8x4x9" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 2, -36)
+
+[node name="Block-8x4x10" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 2, -28)
+
+[node name="Block-8x4x11" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 4, 2, -49)
+
+[node name="Block-8x4x12" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -4, 2, -49)
+
+[node name="Block-8x4x13" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -12, 2, -49)
+
+[node name="Block-8x4x14" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 4, 2, -23)
+
+[node name="Block-8x4x15" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -4, 2, -23)
+
+[node name="Block-8x4x16" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -12, 2, -23)
+
+[node name="Block-2x2x2" parent="NavigationRegion3D/GridMap" instance=ExtResource("10_tly00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -27)
+
+[node name="Block-2x2x3" parent="NavigationRegion3D/GridMap" instance=ExtResource("10_tly00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, -27)
+
+[node name="Block-2x2x4" parent="NavigationRegion3D/GridMap" instance=ExtResource("10_tly00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -45)
+
+[node name="Block-2x2x5" parent="NavigationRegion3D/GridMap" instance=ExtResource("10_tly00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, -45)
+
+[node name="Block-4x2x4" parent="NavigationRegion3D/GridMap" instance=ExtResource("11_j6d84")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, -1, -36)
+
+[node name="Block-4x2x5" parent="NavigationRegion3D/GridMap" instance=ExtResource("11_j6d84")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, -1, -36)
+
+[node name="Block-8x2x12" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, -1, -32)
+
+[node name="Block-8x2x13" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, -1, -40)
+
+[node name="Block-8x2x14" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, -1, -32)
+
+[node name="Block-8x2x15" parent="NavigationRegion3D/GridMap" instance=ExtResource("7_8pmvo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, -1, -40)
+
+[node name="Block-4x4x3" parent="NavigationRegion3D/GridMap" instance=ExtResource("12_xm5tx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -36)
+
+[node name="Block-4x4x4" parent="NavigationRegion3D/GridMap" instance=ExtResource("12_xm5tx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -1, -36)
+
+[node name="Block-4x2x6" parent="NavigationRegion3D/GridMap" instance=ExtResource("13_nlsyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, -1, -28)
+
+[node name="Block-4x2x7" parent="NavigationRegion3D/GridMap" instance=ExtResource("13_nlsyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, -1, -28)
+
+[node name="Block-4x2x8" parent="NavigationRegion3D/GridMap" instance=ExtResource("13_nlsyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, -1, -44)
+
+[node name="Block-4x2x9" parent="NavigationRegion3D/GridMap" instance=ExtResource("13_nlsyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, -1, -44)
+
+[node name="Block-4x2x10" parent="NavigationRegion3D/GridMap" instance=ExtResource("11_j6d84")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, -1, -32)
+
+[node name="Block-4x2x11" parent="NavigationRegion3D/GridMap" instance=ExtResource("11_j6d84")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, -1, -40)
+
+[node name="Block-4x2x12" parent="NavigationRegion3D/GridMap" instance=ExtResource("11_j6d84")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, -1, -32)
+
+[node name="Block-4x2x13" parent="NavigationRegion3D/GridMap" instance=ExtResource("11_j6d84")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, -1, -40)
+
+[node name="Block-8x2x16" parent="NavigationRegion3D/GridMap" instance=ExtResource("14_w884c")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 4, 6, -30)
+
+[node name="Block-2x2x6" parent="NavigationRegion3D/GridMap" instance=ExtResource("15_v6u7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11, -30)
+
+[node name="Block-2x2x7" parent="NavigationRegion3D/GridMap" instance=ExtResource("10_tly00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -30)
+
+[node name="Block-8x2x17" parent="NavigationRegion3D/GridMap" instance=ExtResource("14_w884c")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 4, 6, -42)
+
+[node name="Block-2x2x8" parent="NavigationRegion3D/GridMap" instance=ExtResource("15_v6u7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11, -42)
+
+[node name="Block-2x2x10" parent="NavigationRegion3D/GridMap" instance=ExtResource("15_v6u7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 13, -30)
+
+[node name="Block-2x2x11" parent="NavigationRegion3D/GridMap" instance=ExtResource("15_v6u7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 13, -42)
+
+[node name="Block-2x2x9" parent="NavigationRegion3D/GridMap" instance=ExtResource("10_tly00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -42)
+
+[node name="Block-8x8x10" parent="NavigationRegion3D/GridMap" instance=ExtResource("16_tnu5c")]
+transform = Transform3D(0.494975, 0.753069, 0, -0.494975, 0.753069, 0, 0, 0, 1, -17, -1, -42)
+
+[node name="Block-8x8x11" parent="NavigationRegion3D/GridMap" instance=ExtResource("16_tnu5c")]
+transform = Transform3D(0.494975, 0.753069, 0, -0.494975, 0.753069, 0, 0, 0, 1, -17, -1, -30)
+
+[node name="Block-4x4x5" parent="NavigationRegion3D/GridMap" instance=ExtResource("17_w1457")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 2, -36)
+
+[node name="Block-8x4x6" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 3, -42)
+
+[node name="Block-8x4x7" parent="NavigationRegion3D/GridMap" instance=ExtResource("9_ys6ob")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 3, -30)
+
+[node name="Block-4x4x6" parent="NavigationRegion3D/GridMap" instance=ExtResource("4_afrcp")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -18, 2, -47)
+
+[node name="Block-4x4x8" parent="NavigationRegion3D/GridMap" instance=ExtResource("4_afrcp")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -18, 2, -49)
+
+[node name="Block-4x4x7" parent="NavigationRegion3D/GridMap" instance=ExtResource("4_afrcp")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -18, 2, -25)
+
+[node name="Block-4x4x9" parent="NavigationRegion3D/GridMap" instance=ExtResource("4_afrcp")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -18, 2, -23)
+
+[node name="Block-8x2x18" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -49)
+
+[node name="Block-8x2x19" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -49)
+
+[node name="Block-8x2x20" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5, -49)
+
+[node name="Block-8x2x21" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -23)
+
+[node name="Block-8x2x22" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -23)
+
+[node name="Block-8x2x23" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5, -23)
+
+[node name="Block-8x2x24" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -28)
+
+[node name="Block-8x2x25" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -36)
+
+[node name="Block-8x2x26" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -44)
+
+[node name="Block-8x2x27" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -28)
+
+[node name="Block-8x2x28" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -36)
+
+[node name="Block-8x2x29" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -44)
+
+[node name="Block-4x2x14" parent="NavigationRegion3D/GridMap" instance=ExtResource("13_nlsyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 5, -49)
+
+[node name="Block-4x2x15" parent="NavigationRegion3D/GridMap" instance=ExtResource("13_nlsyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 5, -23)
+
+[node name="Block-8x8x2" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -44)
+
+[node name="Block-8x8x3" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -36)
+
+[node name="Block-8x8x4" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -28)
+
+[node name="Block-8x8x5" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -44)
+
+[node name="Block-8x8x6" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -36)
+
+[node name="Block-8x8x7" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -28)
+
+[node name="Block-8x8x8" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 4, 10, -49)
+
+[node name="Block-8x8x9" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -4, 10, -49)
+
+[node name="Block-8x8x12" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -16, 10, -49)
+
+[node name="Block-8x8x13" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 4, 10, -23)
+
+[node name="Block-8x8x14" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -4, 10, -23)
+
+[node name="Block-8x8x15" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -16, 10, -23)
+
+[node name="Block-8x4x17" parent="NavigationRegion3D/GridMap" instance=ExtResource("23_21mkk")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -10, 10, -49)
+
+[node name="Block-8x4x18" parent="NavigationRegion3D/GridMap" instance=ExtResource("23_21mkk")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -10, 10, -23)
+
+[node name="Block-8x8x16" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -44)
+
+[node name="Block-8x8x17" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -36)
+
+[node name="Block-8x8x18" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -28)
+
+[node name="Block-8x8x19" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 15, -44)
+
+[node name="Block-8x8x20" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 15, -28)
+
+[node name="Block-8x8x21" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -44)
+
+[node name="Block-8x8x22" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -36)
+
+[node name="Block-8x8x23" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -28)
+
+[node name="Block-8x8x24" parent="NavigationRegion3D/GridMap" instance=ExtResource("24_jxmbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 16, -36)
+
+[node name="Block-8x4x19" parent="NavigationRegion3D/GridMap" instance=ExtResource("8_bntml")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 15, -36)
+
+[node name="Block-8x4x20" parent="NavigationRegion3D/GridMap" instance=ExtResource("8_bntml")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 15, -44)
+
+[node name="Block-8x4x21" parent="NavigationRegion3D/GridMap" instance=ExtResource("8_bntml")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 15, -28)
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 layer = 2

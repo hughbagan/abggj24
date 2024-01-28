@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4fnsng3r3pfh"]
+
+[ext_resource type="PackedScene" uid="uid://bysmmv8ki0sdr" path="res://assets/bouncy_castle/Block-8x4x2.glb" id="1_owdf4"]
+[ext_resource type="Material" uid="uid://pxpr258btmdw" path="res://assets/bouncy_castle/BouncyCastleYellow.tres" id="2_15xfn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m3l6f"]
+size = Vector3(8, 2, 4)
+
+[node name="Block-8x4x2" instance=ExtResource("1_owdf4")]
+
+[node name="Block-8x4x22" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_15xfn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block-8x4x22" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block-8x4x22/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_m3l6f")
