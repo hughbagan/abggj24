@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{9d744ecd-54f8-43e6-93e5-1ad900d00560}">
+	<object class="AudioFile" id="{400ba0c5-14b5-4ff6-8afa-5ff24f84371f}">
 		<property name="assetPath">
-			<value>test_music.mp3</value>
+			<value>GGJ2024_high energy.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
@@ -14,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>89.183999999999997</value>
+			<value>81.359999999999999</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{22bd37ee-6b78-4637-ab70-62f0f24b403d}</destination>
