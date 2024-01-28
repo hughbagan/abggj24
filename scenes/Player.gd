@@ -58,6 +58,8 @@ func _physics_process(delta):
 		move_vec.x -= 1
 	if Input.is_action_pressed("move_right"):
 		move_vec.x += 1
+	if not is_on_floor():
+		move_vec.y -= 1
 	velocity = move_vec.normalized().rotated(Vector3(0,1,0), rotation.y) * MOVE_SPEED
 
 	if move_vec != Vector3():

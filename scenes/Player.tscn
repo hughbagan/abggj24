@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://c0riwij08vsnp" path="res://assets/bomb.png" id="11_qnltl"]
 [ext_resource type="ParameterAsset" uid="uid://b08xd7x2073xu" path="res://addons/FMOD/editor/resources/parameters/{8e44306a-34ac-4963-88a1-f12f2730e286}.tres" id="14_u17ot"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_fn2gc"]
-radius = 1.2
+[sub_resource type="CapsuleShape3D" id="1"]
+radius = 0.75
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ac6d3"]
 height = 2.5
@@ -109,14 +109,12 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 default_font = SubResource("6")
 
 [node name="Player" type="CharacterBody3D"]
-floor_constant_speed = true
-floor_snap_length = 0.5
 script = ExtResource("3")
 hit_sfx = ExtResource("2_mj2yi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("SphereShape3D_fn2gc")
+shape = SubResource("1")
 
 [node name="PunchRange" type="Area3D" parent="."]
 collision_layer = 2
