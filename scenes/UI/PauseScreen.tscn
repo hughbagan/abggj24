@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_jp0o2"]
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="2_i15yu"]
-[ext_resource type="Script" path="res://scenes/UI/PausedScore.gd" id="3_1e74n"]
+[ext_resource type="Script" path="res://scenes/UI/UpdateScoreText.gd" id="3_e2ej0"]
 [ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="3_hitky"]
 [ext_resource type="Script" path="res://scenes/UI/ResumeButton.gd" id="3_mqxbc"]
 [ext_resource type="Script" path="res://scenes/UI/QuitButton.gd" id="5_rq8ly"]
@@ -63,7 +63,24 @@ size_flags_horizontal = 4
 text = "39"
 label_settings = SubResource("LabelSettings_daiq5")
 horizontal_alignment = 1
-script = ExtResource("3_1e74n")
+script = ExtResource("3_e2ej0")
+
+[node name="EndButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = 92.0
+offset_right = 238.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "End"
+script = ExtResource("3_hitky")
+next_scene = "res://scenes/UI/GameOver.tscn"
 
 [node name="ResumeButton" type="Button" parent="ColorRect"]
 layout_mode = 1
