@@ -1,9 +1,9 @@
 extends Button
 
 @onready var button : Button = $"."
+@export var next_scene : String
+@export var should_quit : bool = false
 @export var hover : float = 1.1
-
-# Called when the node enters the scene tree for the first time.
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,7 +23,9 @@ func _on_mouse_leave():
 		childNode.scale /= hover
 
 func _on_pressed():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	get_tree().paused = false
-	get_node("/root/World/PauseLayer/PauseMenu").hide()
+	if(should_quit):
+		get_tree().quit()
+	else:
+		get_tree().paused = false
+		get_tree().change_scene_to_file(next_scene)
 	

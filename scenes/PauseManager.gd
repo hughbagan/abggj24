@@ -8,8 +8,8 @@ func _process(delta):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			pause()
 		elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			resume()
-			# get_tree().quit()
+			get_tree().quit()
+			
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
 		get_tree().paused = false
@@ -17,11 +17,14 @@ func _process(delta):
 func resume():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
-	get_node("/root/World/PauseLayer/PauseMenu").hide()
+	var menu = get_node("/root/World/PauseLayer/PauseMenu")
+	if(menu != null):
+		menu.hide()
 
 func pause():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# PAUSE functionality goes here...
 	get_tree().paused = true
-	
-	get_node("/root/World/PauseLayer/PauseMenu").show()
+	var menu = get_node("/root/World/PauseLayer/PauseMenu")
+	if(menu != null):
+		menu.show()

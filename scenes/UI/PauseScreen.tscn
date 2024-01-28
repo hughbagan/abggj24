@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://barq25rmi4rds"]
+[gd_scene load_steps=14 format=3 uid="uid://barq25rmi4rds"]
 
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_jp0o2"]
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="2_i15yu"]
@@ -6,6 +6,11 @@
 [ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="3_hitky"]
 [ext_resource type="Script" path="res://scenes/UI/ResumeButton.gd" id="3_mqxbc"]
 [ext_resource type="Script" path="res://scenes/UI/QuitButton.gd" id="5_rq8ly"]
+[ext_resource type="Script" path="res://scenes/UI/InvisableButton.gd" id="7_nlkwm"]
+[ext_resource type="Texture2D" uid="uid://mrwnihxh7qyp" path="res://assets/ui/quit_button.png" id="8_6ui83"]
+[ext_resource type="Texture2D" uid="uid://dkby52w4g5raq" path="res://assets/ui/resume_button.png" id="8_emwld"]
+[ext_resource type="Texture2D" uid="uid://chh64st0h1ycj" path="res://assets/ui/end_run_button.png" id="10_ncco2"]
+[ext_resource type="Texture2D" uid="uid://bo5uhw2kvd1or" path="res://assets/ui/home_button.png" id="11_olcbk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p8h03"]
 font_size = 89
@@ -66,6 +71,7 @@ horizontal_alignment = 1
 script = ExtResource("3_e2ej0")
 
 [node name="EndButton" type="Button" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -83,6 +89,7 @@ script = ExtResource("3_hitky")
 next_scene = "res://scenes/UI/GameOver.tscn"
 
 [node name="ResumeButton" type="Button" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -99,6 +106,7 @@ text = "Resume"
 script = ExtResource("3_mqxbc")
 
 [node name="HomeButton" type="Button" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -116,6 +124,7 @@ script = ExtResource("3_hitky")
 next_scene = "res://scenes/UI/MainMenu.tscn"
 
 [node name="QuitButton" type="Button" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,3 +140,96 @@ grow_vertical = 2
 text = "Quit
 "
 script = ExtResource("5_rq8ly")
+
+[node name="NewQuitButton" type="Button" parent="ColorRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 188.0
+offset_right = 96.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_nlkwm")
+should_quit = true
+
+[node name="QuitButtonImage" type="TextureRect" parent="ColorRect/NewQuitButton"]
+layout_mode = 1
+offset_right = 215.0
+offset_bottom = 114.0
+texture = ExtResource("8_6ui83")
+
+[node name="NewResumeButton" type="Button" parent="ColorRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.0
+offset_top = 66.0
+offset_right = -160.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_mqxbc")
+
+[node name="PlayButtonImage" type="TextureRect" parent="ColorRect/NewResumeButton"]
+layout_mode = 1
+offset_right = 181.0
+offset_bottom = 114.0
+texture = ExtResource("8_emwld")
+
+[node name="NewEndButton" type="Button" parent="ColorRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 176.0
+offset_top = 84.0
+offset_right = 384.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_nlkwm")
+next_scene = "res://scenes/UI/GameOver.tscn"
+
+[node name="EndButton" type="TextureRect" parent="ColorRect/NewEndButton"]
+layout_mode = 1
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 199.0
+offset_bottom = 98.0
+texture = ExtResource("10_ncco2")
+
+[node name="NewHomeButton" type="Button" parent="ColorRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 60.0
+offset_right = 96.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_nlkwm")
+next_scene = "res://scenes/UI/MainMenu.tscn"
+
+[node name="HomeButtonImage" type="TextureRect" parent="ColorRect/NewHomeButton"]
+layout_mode = 1
+offset_right = 215.0
+offset_bottom = 114.0
+texture = ExtResource("11_olcbk")
