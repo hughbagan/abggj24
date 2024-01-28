@@ -11,5 +11,7 @@ size = Vector3(4, 2, 2)
 [node name="Block-4x2x22" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_2i05a")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Block-4x2x22" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Block-4x2x22" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block-4x2x22/StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_icw3f")

@@ -72,7 +72,7 @@ name = "SFX"
 script = ExtResource("6")
 
 [node name="Player" parent="." instance=ExtResource("2")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.7896, 1.09375, -5.83121)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.7896, 0.09375, -35.8312)
 
 [node name="SpawnPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07134, 2.26394, -5.84482)
@@ -280,6 +280,126 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -18, 2
 [node name="Block-4x4x9" parent="NavigationRegion3D/GridMap" instance=ExtResource("4_afrcp")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -18, 2, -23)
 
+[node name="Block-8x2x18" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -49)
+
+[node name="Block-8x2x19" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -49)
+
+[node name="Block-8x2x20" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5, -49)
+
+[node name="Block-8x2x21" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -23)
+
+[node name="Block-8x2x22" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -23)
+
+[node name="Block-8x2x23" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5, -23)
+
+[node name="Block-8x2x24" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -28)
+
+[node name="Block-8x2x25" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -36)
+
+[node name="Block-8x2x26" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -44)
+
+[node name="Block-8x2x27" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -28)
+
+[node name="Block-8x2x28" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -36)
+
+[node name="Block-8x2x29" parent="NavigationRegion3D/GridMap" instance=ExtResource("6_e0ky0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -44)
+
+[node name="Block-4x2x14" parent="NavigationRegion3D/GridMap" instance=ExtResource("13_nlsyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 5, -49)
+
+[node name="Block-4x2x15" parent="NavigationRegion3D/GridMap" instance=ExtResource("13_nlsyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 5, -23)
+
+[node name="Block-8x8x2" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -44)
+
+[node name="Block-8x8x3" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -36)
+
+[node name="Block-8x8x4" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -28)
+
+[node name="Block-8x8x5" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -44)
+
+[node name="Block-8x8x6" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -36)
+
+[node name="Block-8x8x7" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -28)
+
+[node name="Block-8x8x8" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 4, 10, -49)
+
+[node name="Block-8x8x9" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -4, 10, -49)
+
+[node name="Block-8x8x12" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -16, 10, -49)
+
+[node name="Block-8x8x13" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 4, 10, -23)
+
+[node name="Block-8x8x14" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -4, 10, -23)
+
+[node name="Block-8x8x15" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -16, 10, -23)
+
+[node name="Block-8x4x17" parent="NavigationRegion3D/GridMap" instance=ExtResource("23_21mkk")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -10, 10, -49)
+
+[node name="Block-8x4x18" parent="NavigationRegion3D/GridMap" instance=ExtResource("23_21mkk")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -10, 10, -23)
+
+[node name="Block-8x8x16" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -44)
+
+[node name="Block-8x8x17" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -36)
+
+[node name="Block-8x8x18" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -28)
+
+[node name="Block-8x8x19" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 15, -44)
+
+[node name="Block-8x8x20" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 15, -28)
+
+[node name="Block-8x8x21" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -44)
+
+[node name="Block-8x8x22" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -36)
+
+[node name="Block-8x8x23" parent="NavigationRegion3D/GridMap" instance=ExtResource("22_fgamf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -28)
+
+[node name="Block-8x8x24" parent="NavigationRegion3D/GridMap" instance=ExtResource("24_jxmbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 16, -36)
+
+[node name="Block-8x4x19" parent="NavigationRegion3D/GridMap" instance=ExtResource("8_bntml")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 15, -36)
+
+[node name="Block-8x4x20" parent="NavigationRegion3D/GridMap" instance=ExtResource("8_bntml")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 15, -44)
+
+[node name="Block-8x4x21" parent="NavigationRegion3D/GridMap" instance=ExtResource("8_bntml")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 15, -28)
+
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -318,125 +438,5 @@ value = 0.0
 wait_time = 30.0
 one_shot = true
 autostart = true
-
-[node name="Block-8x2x2" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -49)
-
-[node name="Block-8x2x3" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -49)
-
-[node name="Block-8x2x4" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5, -49)
-
-[node name="Block-8x2x5" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -23)
-
-[node name="Block-8x2x6" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -23)
-
-[node name="Block-8x2x7" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5, -23)
-
-[node name="Block-8x2x8" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -28)
-
-[node name="Block-8x2x9" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -36)
-
-[node name="Block-8x2x10" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 5, -44)
-
-[node name="Block-8x2x11" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -28)
-
-[node name="Block-8x2x12" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -36)
-
-[node name="Block-8x2x13" parent="." instance=ExtResource("6_e0ky0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 5, -44)
-
-[node name="Block-4x2x2" parent="." instance=ExtResource("13_nlsyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 5, -49)
-
-[node name="Block-4x2x3" parent="." instance=ExtResource("13_nlsyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 5, -23)
-
-[node name="Block-8x8x2" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -44)
-
-[node name="Block-8x8x3" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -36)
-
-[node name="Block-8x8x4" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -21, 10, -28)
-
-[node name="Block-8x8x5" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -44)
-
-[node name="Block-8x8x6" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -36)
-
-[node name="Block-8x8x7" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 9, 10, -28)
-
-[node name="Block-8x8x8" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 4, 10, -49)
-
-[node name="Block-8x8x9" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -4, 10, -49)
-
-[node name="Block-8x8x10" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -16, 10, -49)
-
-[node name="Block-8x8x11" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 4, 10, -23)
-
-[node name="Block-8x8x12" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -4, 10, -23)
-
-[node name="Block-8x8x13" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -16, 10, -23)
-
-[node name="Block-8x4x4" parent="." instance=ExtResource("23_21mkk")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -10, 10, -49)
-
-[node name="Block-8x4x5" parent="." instance=ExtResource("23_21mkk")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -10, 10, -23)
-
-[node name="Block-8x8x14" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -44)
-
-[node name="Block-8x8x15" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -36)
-
-[node name="Block-8x8x16" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 15, -28)
-
-[node name="Block-8x8x17" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 15, -44)
-
-[node name="Block-8x8x19" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 15, -28)
-
-[node name="Block-8x8x20" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -44)
-
-[node name="Block-8x8x21" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -36)
-
-[node name="Block-8x8x22" parent="." instance=ExtResource("22_fgamf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -28)
-
-[node name="Block-8x8x18" parent="." instance=ExtResource("24_jxmbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 14, -36)
-
-[node name="Block-8x4x2" parent="." instance=ExtResource("8_bntml")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 15, -36)
-
-[node name="Block-8x4x3" parent="." instance=ExtResource("8_bntml")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 15, -44)
-
-[node name="Block-8x4x6" parent="." instance=ExtResource("8_bntml")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 15, -28)
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
