@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://scenes/Pickup.gd" id="1_xw0bs"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5dvg1"]
-height = 1.0
+height = 1.4
+radius = 0.8
 
 [node name="Pickup" type="Area3D"]
 script = ExtResource("1_xw0bs")
@@ -15,5 +16,6 @@ offset = Vector2(0, 1.335)
 texture = ExtResource("1_00762")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.304, 0, 0, 0, 1.415, 0, 0, 0, 1, 0, 0.753673, 0)
 shape = SubResource("CylinderShape3D_5dvg1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

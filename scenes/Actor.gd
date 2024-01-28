@@ -32,6 +32,7 @@ var on_floor = true
 signal died
 
 func _ready():
+	player = get_node("/root/World/Player")
 	add_to_group("zombies")
 	if player:
 		connect("died", Callable(player, "_on_Zombie_died"))
@@ -83,14 +84,6 @@ func set_movement_target(movement_target:Vector3):
 func _on_velocity_computed(safe_velocity:Vector3):
 	linear_velocity = safe_velocity
 
-func damage():
-	hp -= 1
-	if hp <= 0:
-		var pickup = PickupScene.instantiate()
-		get_parent().add_child(pickup)
-		pickup.global_position = global_position
-		queue_free()
-
 
 #func kill():
 #	dead = true
@@ -107,8 +100,25 @@ func _on_body_entered(body):
 			Globals.score = combo
 			score_label.text = str(Globals.score)
 
+
 func _on_floor_entered(body):
 	on_floor = true
+	if combo > Globals.levels[Globals.level]:
+		# Level up!
+		# Increase the level
+		for l in range(Globals.levels.size()):
+			if Globals.levels[l] > combo:
+				break
+			Globals.level = l
+		# Increase the game timer
+		var game_timer = get_node("/root/World/GameTimer")
+		game_timer.start(game_timer.wait_time + 60.0)
+		# Spawn a pickup
+		var pickup = PickupScene.instantiate()
+		get_parent().add_child(pickup)
+		pickup.global_position = global_position
+		queue_free()
+		print("level ", Globals.level, ": ", Globals.levels[Globals.level])
 	combo = 0
 
 func _on_floor_exited(body):

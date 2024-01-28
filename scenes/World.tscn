@@ -57,6 +57,9 @@ script = ExtResource("6")
 [node name="Player" parent="." instance=ExtResource("2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.7896, 1.09375, -5.83121)
 
+[node name="SpawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07134, 2.26394, -5.84482)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("1")
 
@@ -103,3 +106,10 @@ bank_3 = SubResource("BankAsset_0w68w")
 play_event = 1
 stop_event = 3
 event = ExtResource("8_uv0od")
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
