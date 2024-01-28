@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2ipgeu5bwk1g"]
+[gd_scene load_steps=10 format=3 uid="uid://c2ipgeu5bwk1g"]
 
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_3h4vl"]
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="1_infcj"]
-[ext_resource type="Texture2D" uid="uid://eks4kwvbggrw" path="res://assets/ui/start_menu.png" id="3_tmd86"]
+[ext_resource type="Texture2D" uid="uid://qq28uvon3qvv" path="res://assets/ui/start_menu_big.png" id="3_1mpb3"]
+[ext_resource type="EventAsset" uid="uid://c2kbinyfswmp" path="res://addons/FMOD/editor/resources/events/{3685aa65-cc1a-4264-8efc-5d86f4ab26cc}.tres" id="6_vbpod"]
 [ext_resource type="Texture2D" uid="uid://dgiswa58ennvh" path="res://assets/ui/fmod.png" id="6_wriqw"]
 [ext_resource type="Script" path="res://scenes/UI/InvisableButton.gd" id="7_ty5o2"]
 [ext_resource type="Texture2D" uid="uid://cqt7ldvx83coy" path="res://assets/ui/play_button.png" id="8_bfs64"]
@@ -22,12 +23,10 @@ script = ExtResource("1_infcj")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_tmd86")
+offset_right = 2304.0
+offset_bottom = 1296.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_1mpb3")
 
 [node name="FMOD" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,12 +35,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -192.0
-offset_top = -64.0
-offset_right = -17.0
-offset_bottom = -18.0
+offset_left = -250.0
+offset_top = -79.0001
+offset_right = 1230.0
+offset_bottom = 311.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_wriqw")
 
 [node name="NewQuitButton" type="Button" parent="."]
@@ -59,12 +59,15 @@ offset_bottom = 289.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_ty5o2")
+enter_fx = ExtResource("6_vbpod")
+click_fx = ExtResource("6_vbpod")
 should_quit = true
 
 [node name="QuitButtonImage" type="TextureRect" parent="NewQuitButton"]
 layout_mode = 1
 offset_right = 215.0
 offset_bottom = 114.0
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_lrfhd")
 
 [node name="NewAboutButton" type="Button" parent="."]
@@ -77,11 +80,13 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -120.0
 offset_top = 108.0
-offset_right = 48.0
+offset_right = 84.0
 offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_ty5o2")
+enter_fx = ExtResource("6_vbpod")
+click_fx = ExtResource("6_vbpod")
 next_scene = "res://scenes/UI/AboutMenu.tscn"
 
 [node name="AboutButtonImage" type="TextureRect" parent="NewAboutButton"]
@@ -90,6 +95,7 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 199.0
 offset_bottom = 98.0
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_sxglu")
 
 [node name="NewPlayButton" type="Button" parent="."]
@@ -102,15 +108,18 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -136.0
 offset_top = -4.0
-offset_right = 24.0
+offset_right = 41.0
 offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_ty5o2")
+enter_fx = ExtResource("6_vbpod")
+click_fx = ExtResource("6_vbpod")
 next_scene = "res://scenes/World.tscn"
 
 [node name="PlayButtonImage" type="TextureRect" parent="NewPlayButton"]
 layout_mode = 1
 offset_right = 181.0
 offset_bottom = 114.0
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_bfs64")

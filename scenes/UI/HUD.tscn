@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://haatw24xcif3"]
+[gd_scene load_steps=8 format=3 uid="uid://haatw24xcif3"]
 
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_fth5a"]
+[ext_resource type="Texture2D" uid="uid://dpvwyn7bgiaec" path="res://assets/ui/hud.png" id="2_sfot1"]
+[ext_resource type="Texture2D" uid="uid://dieh1hcsjbjrp" path="res://assets/ui/under.png" id="3_fobvv"]
+[ext_resource type="Texture2D" uid="uid://ba33kq28d4vh5" path="res://assets/ui/progress.png" id="4_5ylqq"]
+[ext_resource type="Script" path="res://scenes/UI/TimeTicker.gd" id="5_6ubfp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t22n0"]
+font_size = 34
+font_color = Color(0, 0.368627, 0.666667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ogca5"]
+font_size = 34
+font_color = Color(0.898039, 0.137255, 0.160784, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -11,24 +23,54 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_fth5a")
 
+[node name="BackgroundBar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -696.0
+offset_top = 26.0
+offset_right = 746.0
+offset_bottom = 426.0
+grow_horizontal = 0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_sfot1")
+
+[node name="TimeTicker" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 20.0
+offset_right = 1028.0
+offset_bottom = 520.0
+scale = Vector2(0.15, 0.15)
+value = 55.0
+fill_mode = 5
+texture_under = ExtResource("3_fobvv")
+texture_progress = ExtResource("4_5ylqq")
+script = ExtResource("5_6ubfp")
+
 [node name="Timer" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -160.0
-offset_right = -33.0
-offset_bottom = 84.0
+offset_left = -109.0
+offset_top = 39.0
+offset_right = -45.0
+offset_bottom = 82.0
 grow_horizontal = 2
 text = "0"
+label_settings = SubResource("LabelSettings_t22n0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
-offset_left = 640.0
-offset_right = 767.0
-offset_bottom = 84.0
+offset_left = 596.0
+offset_top = 38.0
+offset_right = 660.0
+offset_bottom = 82.0
 text = "0"
+label_settings = SubResource("LabelSettings_ogca5")
 horizontal_alignment = 1
 vertical_alignment = 1
