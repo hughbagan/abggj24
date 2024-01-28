@@ -75,7 +75,7 @@ func _physics_process(delta):
 		#anim_player.play()
 		#set_movement_target(player.global_position)
 		if nav.is_navigation_finished():
-			if global_position.distance_to(player.global_position) < 4:
+			if global_position.distance_to(player.global_position) < 3.5:
 				return
 			set_movement_target(player.global_position)
 		$CollisionShape3D/ClownMob.look_at(player.global_position)
