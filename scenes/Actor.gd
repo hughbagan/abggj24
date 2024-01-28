@@ -105,11 +105,15 @@ func _on_floor_entered(body):
 	on_floor = true
 	if combo > Globals.levels[Globals.level]:
 		# Level up!
-		# Spawn a pickup, spawn a new enemy, increase the level
+		# Increase the level
 		for l in range(Globals.levels.size()):
 			if Globals.levels[l] > combo:
 				break
 			Globals.level = l
+		# Increase the game timer
+		var game_timer = get_node("/root/World/GameTimer")
+		game_timer.start(game_timer.wait_time + 60.0)
+		# Spawn a pickup
 		var pickup = PickupScene.instantiate()
 		get_parent().add_child(pickup)
 		pickup.global_position = global_position
