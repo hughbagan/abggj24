@@ -112,7 +112,7 @@ func _on_floor_entered(body):
 			Globals.level = l
 		# Increase the game timer
 		var game_timer = get_node("/root/World/GameTimer")
-		game_timer.start(game_timer.wait_time + 60.0)
+		game_timer.start(game_timer.wait_time + 30.0)
 		# Spawn a pickup
 		var pickup = PickupScene.instantiate()
 		get_parent().add_child(pickup)
