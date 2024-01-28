@@ -2,6 +2,7 @@ extends RigidBody3D
 
 const MOVE_SPEED = 5.0
 const MOUSE_SENS = 0.3
+const BASE_TIMER_BONUS = 5
 
 #@onready var raycast = $RayCast3D
 #@onready var anim_player = $AnimationPlayer
@@ -125,15 +126,20 @@ func _on_floor_entered(body):
 		queue_free()
 	on_floor = true
 	if combo > Globals.levels[Globals.level]:
+		print(combo, "   ", Globals.levels[Globals.level])
 		# Level up!
 		# Increase the level
-		for l in range(Globals.levels.size()):
+		var l = 0
+		while(l < Globals.levels.size() - 1):
+			l += 1
 			if Globals.levels[l] > combo:
 				break
-			Globals.level = l
+		Globals.level = l
+		if Globals.level == Globals.last_level:
+			return
 		# Increase the game timer
 		var game_timer = get_node("/root/World/GameTimer")
-		game_timer.start(game_timer.wait_time + 30.0)
+		game_timer.start(game_timer.wait_time + BASE_TIMER_BONUS)
 		# Spawn a pickup
 		var pickup = PickupScene.instantiate()
 		get_parent().add_child(pickup)

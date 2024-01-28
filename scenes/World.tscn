@@ -104,7 +104,7 @@ stop_event = 3
 event = ExtResource("8_uv0od")
 
 [node name="GameTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
