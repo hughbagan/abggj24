@@ -5,7 +5,7 @@ extends Node3D
 var background_x = 0.0
 
 var max_enemies = 5
-var BASE_SPAWN_INTERVAL = 2.7
+var BASE_SPAWN_INTERVAL = 1.7
 var enemy_spawn_interval = BASE_SPAWN_INTERVAL
 var Mob = preload("res://scenes/StandinMob.tscn")
 var spawner_waiting = false

@@ -2,7 +2,7 @@ extends RigidBody3D
 
 const MOVE_SPEED = 5.0
 const MOUSE_SENS = 0.3
-const BASE_TIMER_BONUS = 10
+const BASE_TIMER_BONUS = 15
 
 #@onready var raycast = $RayCast3D
 #@onready var anim_player = $AnimationPlayer
