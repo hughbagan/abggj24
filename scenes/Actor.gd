@@ -32,6 +32,7 @@ var on_floor = true
 signal died
 
 func _ready():
+	player = get_node("/root/World/Player")
 	add_to_group("zombies")
 	if player:
 		connect("died", Callable(player, "_on_Zombie_died"))
