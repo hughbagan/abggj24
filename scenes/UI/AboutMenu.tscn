@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cteidqpa14g1t"]
+[gd_scene load_steps=6 format=3 uid="uid://cteidqpa14g1t"]
 
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_xk0bq"]
-[ext_resource type="Texture2D" uid="uid://c7wwqhkgu1i0p" path="res://assets/ui/about_screen.png" id="2_gm8xa"]
+[ext_resource type="Texture2D" uid="uid://b15as01bngvb3" path="res://assets/ui/about_screen_big.png" id="2_mvvsd"]
 [ext_resource type="Script" path="res://scenes/UI/InvisableButton.gd" id="3_xginy"]
+[ext_resource type="EventAsset" uid="uid://c2kbinyfswmp" path="res://addons/FMOD/editor/resources/events/{3685aa65-cc1a-4264-8efc-5d86f4ab26cc}.tres" id="4_lomsh"]
 [ext_resource type="Texture2D" uid="uid://ceen3ymynpow" path="res://assets/ui/back_button.png" id="4_qg5oe"]
 
 [node name="AboutMenu" type="Control"]
@@ -16,12 +17,10 @@ theme = ExtResource("1_xk0bq")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_gm8xa")
+offset_right = 2304.0
+offset_bottom = 1296.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mvvsd")
 
 [node name="NewBackButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -38,10 +37,13 @@ offset_bottom = -188.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_xginy")
+enter_fx = ExtResource("4_lomsh")
+click_fx = ExtResource("4_lomsh")
 next_scene = "res://scenes/UI/MainMenu.tscn"
 
 [node name="BackButtonImage" type="TextureRect" parent="NewBackButton"]
 layout_mode = 1
 offset_right = 215.0
 offset_bottom = 114.0
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_qg5oe")

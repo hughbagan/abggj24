@@ -1,18 +1,17 @@
 [gd_resource type="ParameterAsset" load_steps=3 format=3 uid="uid://dbexoytgb6p83"]
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_wgmlb"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_pdwji"]
 data1 = 2260334737
 data2 = 3144263903
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_qbwva"]
-name = "music_energy"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_wgmlb")
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_ibgho"]
+name = "ð"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_pdwji")
 maximum = 1.0
 flags = 12
 guid = "{d8a4850f-211b-4412-a559-c4cea53946af}"
 
 [resource]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_qbwva")
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_ibgho")
 path = "parameter:/music_energy"
 guid = "{d8a4850f-211b-4412-a559-c4cea53946af}"
-name = "music_energy"

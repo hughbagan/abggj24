@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqcp1km2e23q1"]
+[gd_scene load_steps=10 format=3 uid="uid://cqcp1km2e23q1"]
 
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="1_imk3e"]
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_qyje4"]
-[ext_resource type="Texture2D" uid="uid://wwxkmhdkkvkc" path="res://assets/ui/game_over.png" id="3_x4l0p"]
+[ext_resource type="Texture2D" uid="uid://c7kcjn53axx4r" path="res://assets/ui/game_over_big.png" id="3_bv8p2"]
 [ext_resource type="Script" path="res://scenes/UI/InvisableButton.gd" id="5_7byth"]
 [ext_resource type="Script" path="res://scenes/UI/UpdateScoreText.gd" id="5_h51y1"]
 [ext_resource type="Texture2D" uid="uid://c3at64gs6fie0" path="res://assets/ui/again_button.png" id="6_56qdj"]
+[ext_resource type="EventAsset" uid="uid://c2kbinyfswmp" path="res://addons/FMOD/editor/resources/events/{3685aa65-cc1a-4264-8efc-5d86f4ab26cc}.tres" id="6_e8r1u"]
+[ext_resource type="Texture2D" uid="uid://mrwnihxh7qyp" path="res://assets/ui/quit_button.png" id="6_lrkox"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xefl3"]
 font_size = 112
@@ -22,26 +24,51 @@ grow_vertical = 2
 theme = ExtResource("1_qyje4")
 script = ExtResource("1_imk3e")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_x4l0p")
+offset_right = 2304.0
+offset_bottom = 1296.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bv8p2")
 
 [node name="EndScore" type="Label" parent="."]
 layout_mode = 0
 offset_left = 472.0
-offset_top = 248.0
+offset_top = 224.0
 offset_right = 664.0
-offset_bottom = 408.0
+offset_bottom = 384.0
 text = "38"
 label_settings = SubResource("LabelSettings_xefl3")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_h51y1")
+
+[node name="NewQuitButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = 193.0
+offset_right = 57.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_7byth")
+enter_fx = ExtResource("6_e8r1u")
+click_fx = ExtResource("6_e8r1u")
+should_quit = true
+
+[node name="QuitButtonImage" type="TextureRect" parent="NewQuitButton"]
+layout_mode = 1
+offset_left = 40.0
+offset_right = 658.0
+offset_bottom = 305.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_lrkox")
 
 [node name="NewReplayButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -53,15 +80,18 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -104.0
 offset_top = 84.0
-offset_right = 88.0
-offset_bottom = 180.0
+offset_right = 102.0
+offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_7byth")
+enter_fx = ExtResource("6_e8r1u")
+click_fx = ExtResource("6_e8r1u")
 next_scene = "res://scenes/World.tscn"
 
 [node name="ReplayButtonImage" type="TextureRect" parent="NewReplayButton"]
 layout_mode = 1
 offset_right = 215.0
 offset_bottom = 114.0
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_56qdj")
