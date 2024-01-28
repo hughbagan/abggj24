@@ -32,6 +32,10 @@ var punch_mode = PUNCH_NONE
 var ammo = 6
 var reload = 0
 
+var last_position = null
+
+var BEACON_THRESHOLD = 1
+
 func _ready():
 	#aawait get_tree().idle_frame # wait one frame
 #	get_tree().call_group("zombies", "set_player", self)
@@ -55,7 +59,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		move_vec.x += 1
 	velocity = move_vec.normalized().rotated(Vector3(0,1,0), rotation.y) * MOVE_SPEED
-	move_and_slide()
+	
+	if move_vec != Vector3():
+		move_and_slide()
 
 	var left = Input.is_action_just_pressed("punch_left")
 	var right = Input.is_action_just_pressed("punch_right")

@@ -2,7 +2,7 @@ extends RigidBody3D
 
 const MOVE_SPEED = 5.0
 const MOUSE_SENS = 0.3
-const BASE_TIMER_BONUS = 10
+const BASE_TIMER_BONUS = 15
 
 #@onready var raycast = $RayCast3D
 #@onready var anim_player = $AnimationPlayer
@@ -41,6 +41,7 @@ func _ready():
 	get_node("/root/World/FloorArea3D").connect("body_entered", Callable(self, "_on_floor_entered"))
 	get_node("/root/World/FloorArea3D").connect("body_exited", Callable(self, "_on_floor_exited"))
 	
+	set_movement_target(player.global_position)
 	
 	Globals.n_alive_enemies += 1
 
@@ -50,22 +51,12 @@ func set_player(p):
 func set_navigation(n):
 	navigation = n
 
-func look_follow(state: PhysicsDirectBodyState3D, current_transform: Transform3D, target_position: Vector3) -> void:
-	var forward_local_axis: Vector3 = Vector3(1, 0, 0)
-	var forward_dir: Vector3 = (current_transform.basis * forward_local_axis).normalized()
-	var target_dir: Vector3 = (target_position - current_transform.origin).normalized()
-	var local_speed: float = clampf(MOVE_SPEED, 0, acos(forward_dir.dot(target_dir)))
-	if forward_dir.dot(target_dir) > 1e-4:
-		state.angular_velocity = local_speed * forward_dir.cross(target_dir) / state.step
-
-func _integrate_forces(state):
-	var target_position = $".".global_transform.origin
-	look_follow(state, global_transform, player.global_position)
-
 func _physics_process(delta):
 	if dead:
 		return
 	hitbox.global_position = global_position
+	
+	var target_position = $".".global_transform.origin
 	#camera.global_position = global_position
 
 #	print(angular_velocity)
@@ -82,9 +73,12 @@ func _physics_process(delta):
 	else:
 		#sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_FIXED_Y
 		#anim_player.play()
-		set_movement_target(player.global_position)
+		#set_movement_target(player.global_position)
 		if nav.is_navigation_finished():
-			return
+			if global_position.distance_to(player.global_position) < 3.5:
+				return
+			set_movement_target(player.global_position)
+		$CollisionShape3D/ClownMob.look_at(player.global_position)
 		var next_path_position:Vector3 = nav.get_next_path_position()
 		var current_agent_position:Vector3 = global_position
 		var new_velocity:Vector3 = (next_path_position - current_agent_position).normalized() * MOVE_SPEED

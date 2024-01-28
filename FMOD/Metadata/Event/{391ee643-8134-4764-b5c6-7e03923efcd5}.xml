@@ -89,10 +89,13 @@
 	</object>
 	<object class="SingleSound" id="{f7dae275-a6e1-4bfe-b803-d064289d6b0f}">
 		<property name="startOffset">
-			<value>20</value>
+			<value>25</value>
 		</property>
 		<property name="volume">
 			<value>-5</value>
+		</property>
+		<property name="pitch">
+			<value>0.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{d38e765f-f804-465b-8f57-92d47dd46799}</destination>
