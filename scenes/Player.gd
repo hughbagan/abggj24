@@ -11,7 +11,12 @@ const MOUSE_SENS = 0.3
 @onready var ammo_label_timer = $AmmoLabelTimer
 @onready var camera = $Camera3D
 @onready var punch_range = $PunchRange
-@onready var weapon = $CanvasLayer/Control/Weapon
+@onready var weapons = [
+	$CanvasLayer/Weapons/Pan,
+	$CanvasLayer/Weapons/Banana,
+	$CanvasLayer/Weapons/Hammer,
+]
+var weapon
 var weapon_tween
 
 enum {PUNCH_NONE, PUNCH_LEFT, PUNCH_RIGHT}
@@ -23,7 +28,11 @@ var reload = 0
 func _ready():
 	#aawait get_tree().idle_frame # wait one frame
 #	get_tree().call_group("zombies", "set_player", self)
-	pass
+	randomize()
+	for node in $CanvasLayer/Weapons.get_children():
+		node.hide()
+	weapon = weapons[randi() % weapons.size()]
+	weapon.show()
 
 func _input(event):
 	if event is InputEventMouseMotion:

@@ -24,6 +24,16 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body is Player:
+		# Give the player a new weapon
+		body.weapon.hide()
+		while true:
+			var new_weapon = body.weapons[randi() % body.weapons.size()]
+			if body.weapon == new_weapon:
+				continue
+			else:
+				body.weapon = new_weapon
+				break
+		body.weapon.show()
 		var new_mob = MobScene.instantiate()
 		get_parent().add_child(new_mob)
 		new_mob.global_position = spawn_point
