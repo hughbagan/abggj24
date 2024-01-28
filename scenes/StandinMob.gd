@@ -47,6 +47,18 @@ func set_player(p):
 func set_navigation(n):
 	navigation = n
 
+func look_follow(state: PhysicsDirectBodyState3D, current_transform: Transform3D, target_position: Vector3) -> void:
+	var forward_local_axis: Vector3 = Vector3(1, 0, 0)
+	var forward_dir: Vector3 = (current_transform.basis * forward_local_axis).normalized()
+	var target_dir: Vector3 = (target_position - current_transform.origin).normalized()
+	var local_speed: float = clampf(MOVE_SPEED, 0, acos(forward_dir.dot(target_dir)))
+	if forward_dir.dot(target_dir) > 1e-4:
+		state.angular_velocity = local_speed * forward_dir.cross(target_dir) / state.step
+
+func _integrate_forces(state):
+	var target_position = $".".global_transform.origin
+	look_follow(state, global_transform, player.global_position)
+
 func _physics_process(delta):
 	if dead:
 		return
@@ -99,7 +111,6 @@ func kill():
 func _on_body_entered(body):
 	if body is GridMap and not on_floor:
 		combo += 1
-		print(combo)
 		if combo > Globals.score:
 			Globals.score = combo
 			score_label.text = str(Globals.score)
@@ -123,7 +134,6 @@ func _on_floor_entered(body):
 		var pickup = PickupScene.instantiate()
 		get_parent().add_child(pickup)
 		pickup.global_position = global_position
-		print("level ", Globals.level, ": ", Globals.levels[Globals.level])
 	combo = 0
 
 func _on_floor_exited(body):

@@ -5,16 +5,20 @@ extends Node3D
 var background_x = 0.0
 
 var MAX_ENEMIES = 5
-var ENEMY_SPAWN_INTERVAL = 3
+var BASE_SPAWN_INTERVAL = 1
+var enemy_spawn_interval = BASE_SPAWN_INTERVAL
 var Mob = preload("res://scenes/StandinMob.tscn")
+var spawner_waiting = false
 
 func spawn_enemies():
-	while Globals.n_alive_enemies < MAX_ENEMIES:
+	if Globals.n_alive_enemies < MAX_ENEMIES and not spawner_waiting:
+		spawner_waiting = true
 		var m: RigidBody3D = Mob.instantiate()
 		m.position = $SpawnPoint.position
 		m.set_player(player)
 		add_child(m)
-		await get_tree().create_timer(ENEMY_SPAWN_INTERVAL).timeout
+		await get_tree().create_timer(enemy_spawn_interval).timeout
+		spawner_waiting = false
 	
 
 

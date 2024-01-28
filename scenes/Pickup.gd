@@ -1,6 +1,6 @@
 class_name Pickup extends Area3D
 
-@onready var MobScene = preload("res://scenes/Actor.tscn")
+@onready var MobScene = preload("res://scenes/StandinMob.tscn")
 @onready var spawn_point = get_node("/root/World/SpawnPoint").global_position
 @onready var sprite = $Sprite3D
 @onready var sprite_pos = sprite.global_position
@@ -27,6 +27,7 @@ func _on_body_entered(body):
 		# Give the player a new weapon
 		body.new_random_weapon()
 		var new_mob = MobScene.instantiate()
+		new_mob.set_player(body)
 		get_parent().add_child(new_mob)
 		new_mob.global_position = spawn_point
 		queue_free()
