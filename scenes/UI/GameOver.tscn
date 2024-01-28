@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqcp1km2e23q1"]
+[gd_scene load_steps=8 format=3 uid="uid://cqcp1km2e23q1"]
 
-[ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="1_ecji0"]
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="1_imk3e"]
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_qyje4"]
 [ext_resource type="Texture2D" uid="uid://wwxkmhdkkvkc" path="res://assets/ui/game_over.png" id="3_x4l0p"]
+[ext_resource type="Script" path="res://scenes/UI/InvisableButton.gd" id="5_7byth"]
 [ext_resource type="Script" path="res://scenes/UI/UpdateScoreText.gd" id="5_h51y1"]
+[ext_resource type="Texture2D" uid="uid://c3at64gs6fie0" path="res://assets/ui/again_button.png" id="6_56qdj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xefl3"]
-font_size = 89
+font_size = 112
 font_color = Color(0.898039, 0.137255, 0.160784, 1)
 shadow_size = 16
 
@@ -30,32 +31,37 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_x4l0p")
 
-[node name="Replay" type="Button" parent="."]
-process_mode = 3
+[node name="EndScore" type="Label" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 248.0
+offset_right = 664.0
+offset_bottom = 408.0
+text = "38"
+label_settings = SubResource("LabelSettings_xefl3")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_h51y1")
+
+[node name="NewReplayButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = 44.0
-offset_right = 78.0
-offset_bottom = 129.0
+offset_left = -104.0
+offset_top = 84.0
+offset_right = 88.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "REPLAY"
-script = ExtResource("1_ecji0")
+script = ExtResource("5_7byth")
 next_scene = "res://scenes/World.tscn"
 
-[node name="EndScore" type="Label" parent="."]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 240.0
-offset_right = 623.0
-offset_bottom = 345.0
-text = "38"
-label_settings = SubResource("LabelSettings_xefl3")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_h51y1")
+[node name="ReplayButtonImage" type="TextureRect" parent="NewReplayButton"]
+layout_mode = 1
+offset_right = 215.0
+offset_bottom = 114.0
+texture = ExtResource("6_56qdj")
