@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bms2y6jwulxrf"
+path="res://.godot/imported/GGJ2024_high energy.mp3-8772be87d368f9710e54157c7635ac61.mp3str"
+
+[deps]
+
+source_file="res://FMOD/Assets/GGJ2024_high energy.mp3"
+dest_files=["res://.godot/imported/GGJ2024_high energy.mp3-8772be87d368f9710e54157c7635ac61.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
