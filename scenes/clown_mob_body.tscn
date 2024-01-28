@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tjyfuuog3ynh"]
+[gd_scene load_steps=14 format=3 uid="uid://d1diqpah621js"]
 
 [ext_resource type="PackedScene" uid="uid://cldr3hbj5kyve" path="res://assets/mobs/ClownMob.glb" id="1_4xnvp"]
 [ext_resource type="Script" path="res://scenes/clown_mob_body.gd" id="1_iwupv"]
