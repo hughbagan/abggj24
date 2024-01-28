@@ -10,6 +10,16 @@ var enemy_spawn_interval = BASE_SPAWN_INTERVAL
 var Mob = preload("res://scenes/StandinMob.tscn")
 var spawner_waiting = false
 
+var timer_to_music = [
+	[13, 0],
+	[0, 1],
+]
+
+var cur_music = 0.0
+@onready var studio_trigger = $StudioBankLoader/StudioParameterTrigger
+
+var INITIAL_MUSIC = 0
+
 func _small_rand():
 	var n = (randi() % 7) / 5.0
 	var is_pos = randi() % 2
@@ -44,6 +54,7 @@ func _ready():
 	Globals.n_alive_enemies = 0
 
 func _process(delta):
+	refresh_music()
 	max_enemies = (Globals.level + 1) * 3
 	spawn_enemies()
 	$HUDLayer/HUD/Timer.text = str(floor($GameTimer.time_left))
@@ -58,6 +69,19 @@ func _process(delta):
 #		sin(((background_x+4.0)/10)+1),
 #		sin(((background_x+8.0)/10)+1)
 	))
+	
+
+func refresh_music():
+	for pair in timer_to_music:
+		if $GameTimer.time_left > pair[0]:
+			print(cur_music)
+			if pair[1] == cur_music:
+				return
+			cur_music = pair[1]
+			studio_trigger.value = pair[1]
+			studio_trigger.trigger()
+			return
+			
 
 func _on_game_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/UI/GameOver.tscn")
