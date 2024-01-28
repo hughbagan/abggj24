@@ -15,6 +15,12 @@ const MOUSE_SENS = 0.3
 	$CanvasLayer/Weapons/Pan,
 	$CanvasLayer/Weapons/Banana,
 	$CanvasLayer/Weapons/Hammer,
+	$CanvasLayer/Weapons/Bat,
+	$CanvasLayer/Weapons/Baseball,
+	$CanvasLayer/Weapons/Bass,
+	$CanvasLayer/Weapons/Fart,
+	$CanvasLayer/Weapons/Sword,
+	$CanvasLayer/Weapons/Bomb
 ]
 var weapon
 var weapon_tween
@@ -60,7 +66,7 @@ func _physics_process(delta):
 		weapon.show()
 		reload = 0
 		var col = raycast.get_collider()
-		if raycast.is_colliding() and col is Actor:
+		if raycast.is_colliding() and (col is Actor or col.has_method("kill")):
 			if col.hitbox:
 				if punch_range.overlaps_area(col.hitbox):
 					var pos_raised = Vector3(
@@ -70,9 +76,13 @@ func _physics_process(delta):
 					)
 					var to = raycast.to_global(pos_raised)
 					var dir = global_transform.origin.direction_to(to)
-					col.apply_impulse(dir.normalized()*20)
+					if col.has_method("ragdoll_impulse"):
+						col.ragdoll_impulse(dir.normalized()*20)
+					else:
+						col.apply_impulse(dir.normalized()*20)
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
+
 					FMODRuntime.play_one_shot(hit_sfx)
 		#rotation_degrees.x += 4.0 # gun recoil
 		if weapon_tween:

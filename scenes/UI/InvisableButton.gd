@@ -1,6 +1,8 @@
 extends Button
 
 @onready var button : Button = $"."
+@export var enter_fx: EventAsset
+@export var click_fx: EventAsset
 @export var next_scene : String
 @export var should_quit : bool = false
 @export var hover : float = 1.1
@@ -16,6 +18,9 @@ func _on_mouse_enter():
 	var childNode = get_child(0)
 	if(childNode != null):
 		childNode.scale *= hover
+		
+	if(enter_fx != null):
+		FMODRuntime.play_one_shot(enter_fx)
 	
 func _on_mouse_leave():
 	var childNode = get_child(0)
@@ -23,6 +28,10 @@ func _on_mouse_leave():
 		childNode.scale /= hover
 
 func _on_pressed():
+	
+	if(click_fx != null):
+		FMODRuntime.play_one_shot(click_fx)
+	
 	if(should_quit):
 		get_tree().quit()
 	else:
