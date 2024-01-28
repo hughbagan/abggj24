@@ -41,6 +41,7 @@ func _ready():
 	get_tree().call_group("spawners", "set_player", player)
 	get_tree().call_group("spawners", "set_world", self)
 	$HUDLayer/HUD/Timer.text = str(floor($GameTimer.time_left))
+	Globals.n_alive_enemies = 0
 
 func _process(delta):
 	max_enemies = (Globals.level + 1) * 3
