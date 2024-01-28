@@ -74,7 +74,6 @@ func _process(delta):
 func refresh_music():
 	for pair in timer_to_music:
 		if $GameTimer.time_left > pair[0]:
-			print(cur_music)
 			if pair[1] == cur_music:
 				return
 			cur_music = pair[1]
