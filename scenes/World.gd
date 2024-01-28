@@ -1,7 +1,22 @@
 extends Node3D
 
 @onready var player = $Player
+
 var background_x = 0.0
+
+var MAX_ENEMIES = 5
+var ENEMY_SPAWN_INTERVAL = 3
+var Mob = preload("res://scenes/StandinMob.tscn")
+
+func spawn_enemies():
+	while Globals.n_alive_enemies < MAX_ENEMIES:
+		var m: RigidBody3D = Mob.instantiate()
+		m.position = $SpawnPoint.position
+		m.set_player(player)
+		add_child(m)
+		await get_tree().create_timer(ENEMY_SPAWN_INTERVAL).timeout
+	
+
 
 func _ready():
 	# Mouse invisible and stuck to center of screen
@@ -13,6 +28,7 @@ func _ready():
 	$HUDLayer/HUD/Timer.text = str(floor($GameTimer.time_left))
 
 func _process(delta):
+	spawn_enemies()
 	$HUDLayer/HUD/Timer.text = str(floor($GameTimer.time_left))
 	if $GameTimer.time_left <= 10.0:
 		$HUDLayer/HUD/Timer.set_modulate(Color(1.0, 0.0, 0.0))
@@ -28,3 +44,6 @@ func _process(delta):
 
 func _on_game_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/UI/GameOver.tscn")
+
+
+

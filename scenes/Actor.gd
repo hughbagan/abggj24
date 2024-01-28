@@ -102,6 +102,8 @@ func _on_body_entered(body):
 
 
 func _on_floor_entered(body):
+	if not on_floor:
+		queue_free()
 	on_floor = true
 	if combo > Globals.levels[Globals.level]:
 		# Level up!
@@ -117,7 +119,7 @@ func _on_floor_entered(body):
 		var pickup = PickupScene.instantiate()
 		get_parent().add_child(pickup)
 		pickup.global_position = global_position
-		queue_free()
+		
 		print("level ", Globals.level, ": ", Globals.levels[Globals.level])
 	combo = 0
 

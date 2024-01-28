@@ -11,6 +11,8 @@ const MOUSE_SENS = 0.3
 @onready var nav = $NavigationAgent3D
 #@onready var sprite = $StandinMob
 @onready var gridmap := get_node("/root/World/NavigationRegion3D/GridMap")
+@onready var score_label := get_node("/root/World/HUDLayer/HUD/Score")
+var PickupScene = preload("res://scenes/Pickup.tscn")
 
 enum {PUNCH_NONE, PUNCH_LEFT, PUNCH_RIGHT}
 var punch_mode = PUNCH_NONE
@@ -24,6 +26,9 @@ var dead = false
 var hit = false
 var path = []
 
+var combo = 0
+var on_floor = true
+
 signal died
 
 func _ready():
@@ -32,6 +37,9 @@ func _ready():
 		connect("died", Callable(player, "_on_Zombie_died"))
 	#anim_player.play("walk")
 	nav.velocity_computed.connect(Callable(_on_velocity_computed))
+	get_node("/root/World/FloorArea3D").connect("body_entered", Callable(self, "_on_floor_entered"))
+	get_node("/root/World/FloorArea3D").connect("body_exited", Callable(self, "_on_floor_exited"))
+	Globals.n_alive_enemies += 1
 
 func set_player(p):
 	player = p
@@ -87,4 +95,37 @@ func kill():
 	#anim_player.play("die")
 	Globals.score += 100
 	emit_signal("died")
+
+func _on_body_entered(body):
+	if body is GridMap and not on_floor:
+		combo += 1
+		print(combo)
+		if combo > Globals.score:
+			Globals.score = combo
+			score_label.text = str(Globals.score)
+
+func _on_floor_entered(body):
+	if not on_floor:
+		Globals.n_alive_enemies -= 1
+		queue_free()
+	on_floor = true
+	if combo > Globals.levels[Globals.level]:
+		# Level up!
+		# Increase the level
+		for l in range(Globals.levels.size()):
+			if Globals.levels[l] > combo:
+				break
+			Globals.level = l
+		# Increase the game timer
+		var game_timer = get_node("/root/World/GameTimer")
+		game_timer.start(game_timer.wait_time + 30.0)
+		# Spawn a pickup
+		var pickup = PickupScene.instantiate()
+		get_parent().add_child(pickup)
+		pickup.global_position = global_position
+		print("level ", Globals.level, ": ", Globals.levels[Globals.level])
+	combo = 0
+
+func _on_floor_exited(body):
+	on_floor = false
 
