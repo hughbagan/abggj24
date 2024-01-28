@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2ipgeu5bwk1g"]
+[gd_scene load_steps=12 format=3 uid="uid://c2ipgeu5bwk1g"]
 
 [ext_resource type="Theme" uid="uid://ba04662dntpfr" path="res://assets/themes/main.tres" id="1_3h4vl"]
 [ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="1_infcj"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cqt7ldvx83coy" path="res://assets/ui/play_button.png" id="8_bfs64"]
 [ext_resource type="Texture2D" uid="uid://mrwnihxh7qyp" path="res://assets/ui/quit_button.png" id="8_lrfhd"]
 [ext_resource type="Texture2D" uid="uid://brspkpkss5gj2" path="res://assets/ui/about_button.png" id="8_sxglu"]
+[ext_resource type="Texture2D" uid="uid://b1lhst83pjha" path="res://assets/ui/clown.png" id="10_r6vlv"]
+[ext_resource type="Script" path="res://scenes/UI/Clown.gd" id="11_lrel5"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -35,9 +37,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -79.0001
-offset_right = 1230.0
+offset_left = -1135.0
+offset_top = -79.0
+offset_right = 345.0
 offset_bottom = 311.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -115,7 +117,7 @@ grow_vertical = 2
 script = ExtResource("7_ty5o2")
 enter_fx = ExtResource("6_vbpod")
 click_fx = ExtResource("6_vbpod")
-next_scene = "res://scenes/World.tscn"
+next_scene = "res://scenes/UI/HowToMenu.tscn"
 
 [node name="PlayButtonImage" type="TextureRect" parent="NewPlayButton"]
 layout_mode = 1
@@ -123,3 +125,9 @@ offset_right = 181.0
 offset_bottom = 114.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_bfs64")
+
+[node name="Clown" type="Sprite2D" parent="."]
+position = Vector2(1031, 597)
+rotation = -0.355939
+texture = ExtResource("10_r6vlv")
+script = ExtResource("11_lrel5")

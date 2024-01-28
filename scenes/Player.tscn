@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcgk416cuol8g" path="res://assets/reticle.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://cghhs8a733dq" path="res://assets/banana.png" id="2_gy0pw"]
-[ext_resource type="EventAsset" uid="uid://ctk5ebk8f3arr" path="res://addons/FMOD/editor/resources/events/{391ee643-8134-4764-b5c6-7e03923efcd5}.tres" id="2_mj2yi"]
+[ext_resource type="EventAsset" path="res://addons/FMOD/editor/resources/events/{391ee643-8134-4764-b5c6-7e03923efcd5}.tres" id="2_mj2yi"]
 [ext_resource type="Script" path="res://scenes/Player.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://dtf35givtwytw" path="res://assets/pan.png" id="3_66y2l"]
 [ext_resource type="FontFile" uid="uid://bfnrupvkqq45c" path="res://assets/dpcomic-crowned/dpcomic-crowned.ttf" id="4"]

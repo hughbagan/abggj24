@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6g4jqvonjb3a"]
+
+[ext_resource type="Script" path="res://scenes/UI/MenuSetup.gd" id="1_0d068"]
+[ext_resource type="Script" path="res://scenes/UI/SceneChangeButton.gd" id="2_0iu5v"]
+[ext_resource type="Texture2D" uid="uid://c135iqst1hnnd" path="res://assets/ui/how_to_screen.png" id="2_ck31v"]
+[ext_resource type="Texture2D" uid="uid://cric7qrebop7y" path="res://assets/ui/dead_clown.png" id="3_rj02y"]
+[ext_resource type="Texture2D" uid="uid://b1lhst83pjha" path="res://assets/ui/clown.png" id="4_2tg5k"]
+[ext_resource type="Script" path="res://scenes/UI/ClownDown.gd" id="4_futa5"]
+[ext_resource type="Script" path="res://scenes/UI/ClownUp.gd" id="5_4dnfi"]
+[ext_resource type="Texture2D" uid="uid://ckne78h5w632q" path="res://assets/hammer.png" id="6_kma24"]
+[ext_resource type="Script" path="res://scenes/UI/Hammer.gd" id="7_tfwnq"]
+
+[node name="how_to_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0d068")
+
+[node name="ClickToStart" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 650.0
+script = ExtResource("2_0iu5v")
+next_scene = "res://scenes/World.tscn"
+
+[node name="Background" type="TextureRect" parent="ClickToStart"]
+layout_mode = 1
+offset_right = 2304.0
+offset_bottom = 1296.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ck31v")
+
+[node name="Hammer" type="Sprite2D" parent="ClickToStart"]
+position = Vector2(226, 465)
+rotation = -1.43641
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_kma24")
+script = ExtResource("7_tfwnq")
+
+[node name="ClownUp" type="Sprite2D" parent="ClickToStart"]
+position = Vector2(581, 504)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_2tg5k")
+script = ExtResource("5_4dnfi")
+
+[node name="ClownDown" type="Sprite2D" parent="ClickToStart"]
+position = Vector2(963, 394)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rj02y")
+script = ExtResource("4_futa5")
