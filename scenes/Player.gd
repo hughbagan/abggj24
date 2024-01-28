@@ -32,11 +32,32 @@ var punch_mode = PUNCH_NONE
 var ammo = 6
 var reload = 0
 
+var last_position = null
+
+var beacon_just_called = false
+var BEACON_INTERVAL = 0.3
+var BEACON_THRESHOLD = 1
+
 func _ready():
 	#aawait get_tree().idle_frame # wait one frame
 #	get_tree().call_group("zombies", "set_player", self)
 	randomize()
 	new_random_weapon()
+	
+
+func refresh_beacon():
+	if beacon_just_called:
+		return
+	if (
+		last_position == null
+		or last_position.distance_to(global_position) > BEACON_THRESHOLD
+	):
+		get_tree().call_group("zombies", "set_movement_target", global_position)
+		last_position = global_position
+		
+		beacon_just_called = true
+		await get_tree().create_timer(BEACON_INTERVAL).timeout
+		beacon_just_called = false
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -45,6 +66,7 @@ func _input(event):
 			rotation_degrees.x = clamp(rotation_degrees.x - event.relative.y * MOUSE_SENS, -90, 90)
 
 func _physics_process(delta):
+	refresh_beacon()
 	var move_vec = Vector3()
 	if Input.is_action_pressed("move_forwards"):
 		move_vec.z -= 1
@@ -55,7 +77,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		move_vec.x += 1
 	velocity = move_vec.normalized().rotated(Vector3(0,1,0), rotation.y) * MOVE_SPEED
-	move_and_slide()
+	
+	if move_vec != Vector3():
+		move_and_slide()
 
 	var left = Input.is_action_just_pressed("punch_left")
 	var right = Input.is_action_just_pressed("punch_right")

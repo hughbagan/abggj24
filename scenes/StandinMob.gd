@@ -41,6 +41,7 @@ func _ready():
 	get_node("/root/World/FloorArea3D").connect("body_entered", Callable(self, "_on_floor_entered"))
 	get_node("/root/World/FloorArea3D").connect("body_exited", Callable(self, "_on_floor_exited"))
 	
+	set_movement_target(player.global_position)
 	
 	Globals.n_alive_enemies += 1
 
@@ -72,10 +73,12 @@ func _physics_process(delta):
 	else:
 		#sprite.billboard = BaseMaterial3D.BillboardMode.BILLBOARD_FIXED_Y
 		#anim_player.play()
-		set_movement_target(player.global_position)
-		$CollisionShape3D/ClownMob.look_at(player.global_position)
+		#set_movement_target(player.global_position)
 		if nav.is_navigation_finished():
-			return
+			if global_position.distance_to(player.global_position) < 4:
+				return
+			set_movement_target(player.global_position)
+		$CollisionShape3D/ClownMob.look_at(player.global_position)
 		var next_path_position:Vector3 = nav.get_next_path_position()
 		var current_agent_position:Vector3 = global_position
 		var new_velocity:Vector3 = (next_path_position - current_agent_position).normalized() * MOVE_SPEED
