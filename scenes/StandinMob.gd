@@ -103,10 +103,13 @@ func make_walking():
 
 func kill():
 	dead = true
-	$CollisionShape3D.disabled = true
-	#anim_player.play("die")
-	Globals.score += 100
-	emit_signal("died")
+	Globals.n_alive_enemies -= 1
+	#queue_free()
+	$CollisionShape3D/ClownMob.die()
+	$CollisionShape3D.set_deferred("disabled", true)
+	#emit_signal("died")
+	await get_tree().create_timer(2).timeout
+	queue_free()
 
 func _on_body_entered(body):
 	if body is GridMap and not on_floor and hit:
@@ -119,8 +122,7 @@ func _on_floor_entered(body):
 	if not body == self:
 		return
 	if not on_floor:
-		Globals.n_alive_enemies -= 1
-		queue_free()
+		kill()
 	on_floor = true
 	if combo > Globals.levels[Globals.level]:
 		# Level up!
