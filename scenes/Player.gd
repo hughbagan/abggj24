@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 const MOVE_SPEED = 7
 const MOUSE_SENS = 0.3
