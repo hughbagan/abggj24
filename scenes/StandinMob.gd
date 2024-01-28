@@ -9,7 +9,7 @@ const MOUSE_SENS = 0.3
 @onready var hitbox = $Hitbox
 #@onready var camera = $Camera3D
 @onready var nav = $NavigationAgent3D
-@onready var sprite = $StandinMob
+#@onready var sprite = $StandinMob
 @onready var gridmap := get_node("/root/World/NavigationRegion3D/GridMap")
 
 enum {PUNCH_NONE, PUNCH_LEFT, PUNCH_RIGHT}
@@ -77,10 +77,19 @@ func _on_velocity_computed(safe_velocity:Vector3):
 	linear_velocity = safe_velocity
 
 func ragdoll_impulse(data):
-	$CollisionShape3D/Skeleton3D.physical_bones_start_simulation()
-	for c in $CollisionShape3D/Skeleton3D.get_children():
-		if c.has_method("apply_impulse"):
-			c.apply_impulse(data)
+	$CollisionShape3D/Skeleton3D.physical_bones_start_simulation([
+		"Head",
+		"Hip-Left",
+		"Hip-Right",
+		"Shoulder-Left",
+		"Shoulder-Right",
+		"Elbow-Left",
+		"Elbow-Right",
+		"Knee-Left",
+		"Knee-Right",
+	])
+	$".".apply_impulse(data)
+
 
 func kill():
 	dead = true
