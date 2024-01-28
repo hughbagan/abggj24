@@ -36,7 +36,7 @@ func _ready():
 	add_to_group("zombies")
 	if player:
 		connect("died", Callable(player, "_on_Zombie_died"))
-	#anim_player.play("walk")
+	anim_player.play("walk")
 	nav.velocity_computed.connect(Callable(_on_velocity_computed))
 	get_node("/root/World/FloorArea3D").connect("body_entered", Callable(self, "_on_floor_entered"))
 	get_node("/root/World/FloorArea3D").connect("body_exited", Callable(self, "_on_floor_exited"))

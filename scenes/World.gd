@@ -18,9 +18,9 @@ func _process(delta):
 		$HUDLayer/HUD/Timer.set_modulate(Color(1.0, 0.0, 0.0))
 	background_x += delta
 	$WorldEnvironment.environment.set_bg_color(Color(
-		0.25*cos(background_x/10)+0.5,
-		0.25*cos((background_x+5)/10)+0.5,
-		0.25*cos((background_x+10)/10)+0.5
+		0.25*cos(background_x/10)+0.75,
+		0.25*cos((background_x+5)/10)+0.75,
+		0.25*cos((background_x+10)/10)+0.75
 #		sin((background_x/10)+1),
 #		sin(((background_x+4.0)/10)+1),
 #		sin(((background_x+8.0)/10)+1)
