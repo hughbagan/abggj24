@@ -9,7 +9,7 @@ func _process(delta):
 			pause()
 		elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			get_tree().quit()
-			
+
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
 		get_tree().paused = false

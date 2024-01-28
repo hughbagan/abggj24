@@ -40,7 +40,7 @@ func spawn_enemies():
 		m.make_walking()
 		await get_tree().create_timer(enemy_spawn_interval).timeout
 		spawner_waiting = false
-	
+
 
 
 func _ready():
@@ -69,7 +69,7 @@ func _process(delta):
 #		sin(((background_x+4.0)/10)+1),
 #		sin(((background_x+8.0)/10)+1)
 	))
-	
+
 
 func refresh_music():
 	for pair in timer_to_music:
@@ -80,7 +80,7 @@ func refresh_music():
 			studio_trigger.value = pair[1]
 			studio_trigger.trigger()
 			return
-			
+
 
 func _on_game_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/UI/GameOver.tscn")

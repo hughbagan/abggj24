@@ -119,7 +119,7 @@ func _on_floor_entered(body):
 		var pickup = PickupScene.instantiate()
 		get_parent().add_child(pickup)
 		pickup.global_position = global_position
-		
+
 		print("level ", Globals.level, ": ", Globals.levels[Globals.level])
 	combo = 0
 
