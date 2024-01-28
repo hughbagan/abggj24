@@ -12,4 +12,4 @@ func _process(delta):
 	if(last_score != Globals.score):
 		last_score = Globals.score
 		text = str(Globals.score)
-		
+
