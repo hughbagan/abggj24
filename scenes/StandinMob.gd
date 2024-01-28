@@ -77,17 +77,7 @@ func _on_velocity_computed(safe_velocity:Vector3):
 	linear_velocity = safe_velocity
 
 func ragdoll_impulse(data):
-	$CollisionShape3D/Skeleton3D.physical_bones_start_simulation([
-		"Head",
-		"Hip-Left",
-		"Hip-Right",
-		"Shoulder-Left",
-		"Shoulder-Right",
-		"Elbow-Left",
-		"Elbow-Right",
-		"Knee-Left",
-		"Knee-Right",
-	])
+	$CollisionShape3D/ClownMob.make_ragdoll()
 	$".".apply_impulse(data)
 
 

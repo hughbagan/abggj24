@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/ClownMob.glb-ee50b5ee9760c211840b9626e60e0416
 
 [params]
 
-nodes/root_type="StaticBody3D"
+nodes/root_type="Node3D"
 nodes/root_name="StandinMob"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
