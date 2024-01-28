@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e7bfaa8a-be31-4365-9f01-7002a83968a0}">
+		<property name="note">
+			<value>https://soundbible.com/2047-Banana-Slap.html</value>
+		</property>
+		<property name="assetPath">
+			<value>Banana_Slap-AngryFlash-2001109808.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.75697916666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{22bd37ee-6b78-4637-ab70-62f0f24b403d}</destination>
+		</relationship>
+	</object>
+</objects>
