@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 const MOVE_SPEED = 7
 const MOUSE_SENS = 0.3
@@ -11,7 +11,12 @@ const MOUSE_SENS = 0.3
 @onready var ammo_label_timer = $AmmoLabelTimer
 @onready var camera = $Camera3D
 @onready var punch_range = $PunchRange
-@onready var weapon = $CanvasLayer/Control/Weapon
+@onready var weapons = [
+	$CanvasLayer/Weapons/Pan,
+	$CanvasLayer/Weapons/Banana,
+	$CanvasLayer/Weapons/Hammer,
+]
+var weapon
 var weapon_tween
 
 enum {PUNCH_NONE, PUNCH_LEFT, PUNCH_RIGHT}
@@ -23,7 +28,11 @@ var reload = 0
 func _ready():
 	#aawait get_tree().idle_frame # wait one frame
 #	get_tree().call_group("zombies", "set_player", self)
-	pass
+	randomize()
+	for node in $CanvasLayer/Weapons.get_children():
+		node.hide()
+	weapon = weapons[randi() % weapons.size()]
+	weapon.show()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -64,7 +73,6 @@ func _physics_process(delta):
 					col.apply_impulse(dir.normalized()*20)
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
-					col.damage()
 					FMODRuntime.play_one_shot(hit_sfx)
 		#rotation_degrees.x += 4.0 # gun recoil
 		if weapon_tween:
@@ -75,12 +83,6 @@ func _physics_process(delta):
 
 func kill():
 	PauseManager.pause()
-	show_score()
-
-func show_score():
-	ammo_label.text = str(Globals.score)
-	ammo_label.set_offsets_preset(ammo_label.PRESET_CENTER)
-	ammo_label.show()
 
 func _on_ReloadTimer_timeout():
 	pass

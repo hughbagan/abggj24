@@ -6,3 +6,4 @@ var cursor = load("res://assets/ui/cursor.png")
 func _ready():
 	Input.set_custom_mouse_cursor(cursor)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().root.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS

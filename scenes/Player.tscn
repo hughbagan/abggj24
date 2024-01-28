@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8xhmsicg8x6q"]
+[gd_scene load_steps=17 format=3 uid="uid://c8xhmsicg8x6q"]
 
 [ext_resource type="Texture2D" uid="uid://dcgk416cuol8g" path="res://assets/reticle.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://cghhs8a733dq" path="res://assets/banana.png" id="2_gy0pw"]
 [ext_resource type="Script" path="res://scenes/Player.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://dtf35givtwytw" path="res://assets/pan.png" id="3_66y2l"]
 [ext_resource type="FontFile" uid="uid://bfnrupvkqq45c" path="res://assets/dpcomic-crowned/dpcomic-crowned.ttf" id="4"]
+[ext_resource type="Texture2D" uid="uid://ckne78h5w632q" path="res://assets/hammer.png" id="5_cdmbe"]
 [ext_resource type="EventAsset" uid="uid://c2kbinyfswmp" path="res://addons/FMOD/editor/resources/events/{3685aa65-cc1a-4264-8efc-5d86f4ab26cc}.tres" id="5_hssu4"]
 
 [sub_resource type="CapsuleShape3D" id="1"]
@@ -18,7 +20,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Control/Weapon:frame")
+tracks/0/path = NodePath("../CanvasLayer/Weapons/Pan:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,7 +36,7 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Control/Weapon:frame")
+tracks/0/path = NodePath("../CanvasLayer/Weapons/Pan:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -50,7 +52,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Control/Weapon:frame")
+tracks/0/path = NodePath("../CanvasLayer/Weapons/Pan:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -66,7 +68,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/Control/Weapon:frame")
+tracks/0/path = NodePath("../CanvasLayer/Weapons/Pan:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -129,7 +131,7 @@ libraries = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Weapons" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -139,11 +141,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Weapon" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="Pan" type="Sprite2D" parent="CanvasLayer/Weapons"]
+position = Vector2(1, 25)
+rotation = 3.14159
+scale = Vector2(-0.58, 0.5)
+texture = ExtResource("3_66y2l")
+centered = false
+
+[node name="Banana" type="Sprite2D" parent="CanvasLayer/Weapons"]
 position = Vector2(1, 25)
 rotation = 3.14159
 scale = Vector2(-0.58, 0.5)
 texture = ExtResource("2_gy0pw")
+centered = false
+
+[node name="Hammer" type="Sprite2D" parent="CanvasLayer/Weapons"]
+position = Vector2(1, 25)
+rotation = 3.14159
+scale = Vector2(-1.17473, 1.0127)
+texture = ExtResource("5_cdmbe")
 centered = false
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
