@@ -5,7 +5,7 @@ extends Node3D
 var background_x = 0.0
 
 var MAX_ENEMIES = 5
-var ENEMY_SPAWN_INTERVAL = 3
+var ENEMY_SPAWN_INTERVAL = 2.7
 var Mob = preload("res://scenes/StandinMob.tscn")
 
 func spawn_enemies():
@@ -14,6 +14,7 @@ func spawn_enemies():
 		m.position = $SpawnPoint.position
 		m.set_player(player)
 		add_child(m)
+		m.make_walking()
 		await get_tree().create_timer(ENEMY_SPAWN_INTERVAL).timeout
 	
 

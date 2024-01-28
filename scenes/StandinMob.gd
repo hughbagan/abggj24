@@ -88,6 +88,9 @@ func ragdoll_impulse(data):
 	$CollisionShape3D/ClownMob.make_ragdoll()
 	$".".apply_impulse(data)
 
+func make_walking():
+	$CollisionShape3D/ClownMob.make_walking()
+
 
 func kill():
 	dead = true
