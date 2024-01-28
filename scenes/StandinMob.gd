@@ -39,6 +39,8 @@ func _ready():
 	nav.velocity_computed.connect(Callable(_on_velocity_computed))
 	get_node("/root/World/FloorArea3D").connect("body_entered", Callable(self, "_on_floor_entered"))
 	get_node("/root/World/FloorArea3D").connect("body_exited", Callable(self, "_on_floor_exited"))
+	
+	
 	Globals.n_alive_enemies += 1
 
 func set_player(p):
@@ -116,6 +118,8 @@ func _on_body_entered(body):
 			score_label.text = str(Globals.score)
 
 func _on_floor_entered(body):
+	if not body == self:
+		return
 	if not on_floor:
 		Globals.n_alive_enemies -= 1
 		queue_free()
