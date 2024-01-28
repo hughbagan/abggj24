@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://da2e0tl80jsbp"]
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://escx70qdf461"]
 
 [ext_resource type="Texture2D" uid="uid://dat1e1hny5dc2" path="res://assets/bouncy_castle/HotspotMap_DefaultMaterial_BaseColor.png" id="1_64ie5"]
 [ext_resource type="Texture2D" uid="uid://fediqpdt8e6b" path="res://assets/bouncy_castle/HotspotMap_DefaultMaterial_Normal.png" id="2_ttsq7"]
