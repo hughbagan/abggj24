@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://buyk2ka4gtehw"]
+[gd_scene load_steps=7 format=3 uid="uid://buyk2ka4gtehw"]
 
 [ext_resource type="Texture2D" uid="uid://deb1gyw07yj1g" path="res://assets/wall.png" id="1_q7l7s"]
 
@@ -14,34 +14,6 @@ material = SubResource("13")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ex2b8"]
 size = Vector3(2, 0.1, 2)
-
-[sub_resource type="BankAsset" id="BankAsset_vuf6i"]
-file_path = "res://FMOD/Build/Desktop/Master.bank"
-modified_time = 1706335467
-path = "bank:/Master"
-guid = "{c48568cb-49ed-47c2-a555-18b47b9a3f08}"
-name = "Master"
-
-[sub_resource type="BankAsset" id="BankAsset_io52w"]
-file_path = "res://FMOD/Build/Desktop/Master.strings.bank"
-modified_time = 1706335467
-path = "bank:/Master.strings"
-guid = "{5c98481f-3896-0b80-231c-924a8a693990}"
-name = "Master.strings"
-
-[sub_resource type="BankAsset" id="BankAsset_hcvfw"]
-file_path = "res://FMOD/Build/Desktop/Music.bank"
-modified_time = 1706386144
-path = "bank:/Music"
-guid = "{9e3f44dc-1858-495f-b6ae-897dfa7627be}"
-name = "Music"
-
-[sub_resource type="BankAsset" id="BankAsset_nmv1l"]
-file_path = "res://FMOD/Build/Desktop/SFX.bank"
-modified_time = 1706386144
-path = "bank:/SFX"
-guid = "{8b9c35e5-dc7c-43f9-8e9a-2970979a1d67}"
-name = "SFX"
 
 [node name="Tiles" type="Node3D"]
 
@@ -63,11 +35,3 @@ mesh = SubResource("4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("BoxShape3D_ex2b8")
-
-[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
-load_on = 1
-num_banks = 4
-bank_0 = SubResource("BankAsset_vuf6i")
-bank_1 = SubResource("BankAsset_io52w")
-bank_2 = SubResource("BankAsset_hcvfw")
-bank_3 = SubResource("BankAsset_nmv1l")
