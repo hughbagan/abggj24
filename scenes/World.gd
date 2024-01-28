@@ -42,7 +42,7 @@ func _ready():
 	$HUDLayer/HUD/Timer.text = str(floor($GameTimer.time_left))
 
 func _process(delta):
-	max_enemies = (Globals.level + 1) * 2
+	max_enemies = (Globals.level + 1) * 3
 	spawn_enemies()
 	$HUDLayer/HUD/Timer.text = str(floor($GameTimer.time_left))
 	if $GameTimer.time_left <= 10.0:

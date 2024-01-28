@@ -2,7 +2,7 @@ extends RigidBody3D
 
 const MOVE_SPEED = 5.0
 const MOUSE_SENS = 0.3
-const BASE_TIMER_BONUS = 5
+const BASE_TIMER_BONUS = 10
 
 #@onready var raycast = $RayCast3D
 #@onready var anim_player = $AnimationPlayer
@@ -112,7 +112,7 @@ func kill():
 	emit_signal("died")
 
 func _on_body_entered(body):
-	if body is GridMap and not on_floor:
+	if body is GridMap and not on_floor and hit:
 		combo += 1
 		if combo > Globals.score:
 			Globals.score = combo
@@ -126,16 +126,16 @@ func _on_floor_entered(body):
 		queue_free()
 	on_floor = true
 	if combo > Globals.levels[Globals.level]:
-		print(combo, "   ", Globals.levels[Globals.level])
 		# Level up!
 		# Increase the level
+		var last_level = Globals.level
 		var l = 0
 		while(l < Globals.levels.size() - 1):
 			l += 1
 			if Globals.levels[l] > combo:
 				break
 		Globals.level = l
-		if Globals.level == Globals.last_level:
+		if Globals.level == last_level:
 			return
 		# Increase the game timer
 		var game_timer = get_node("/root/World/GameTimer")
