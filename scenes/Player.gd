@@ -64,7 +64,6 @@ func _physics_process(delta):
 					col.apply_impulse(dir.normalized()*20)
 					#print("PUSH", raycast.target_position, pos_raised, to, dir, dir.normalized()*10)
 					col.hit = true
-					col.damage()
 					FMODRuntime.play_one_shot(hit_sfx)
 		#rotation_degrees.x += 4.0 # gun recoil
 		if weapon_tween:
@@ -75,12 +74,6 @@ func _physics_process(delta):
 
 func kill():
 	PauseManager.pause()
-	show_score()
-
-func show_score():
-	ammo_label.text = str(Globals.score)
-	ammo_label.set_offsets_preset(ammo_label.PRESET_CENTER)
-	ammo_label.show()
 
 func _on_ReloadTimer_timeout():
 	pass
