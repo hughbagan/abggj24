@@ -20,3 +20,10 @@ func make_ragdoll():
 		"Knee-Left",
 		"Knee-Right",
 	])
+
+func die():
+	for bone in $AdvArmature/Skeleton3D.get_children():
+		if not bone.has_method("apply_impulse"):
+			continue
+		bone.get_child(0).set_deferred("disabled", false)
+	$AdvArmature/Skeleton3D.physical_bones_start_simulation(["Root"])
