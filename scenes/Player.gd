@@ -15,6 +15,12 @@ const MOUSE_SENS = 0.3
 	$CanvasLayer/Weapons/Pan,
 	$CanvasLayer/Weapons/Banana,
 	$CanvasLayer/Weapons/Hammer,
+	$CanvasLayer/Weapons/Bat,
+	$CanvasLayer/Weapons/Baseball,
+	$CanvasLayer/Weapons/Bass,
+	$CanvasLayer/Weapons/Fart,
+	$CanvasLayer/Weapons/Sword,
+	$CanvasLayer/Weapons/Bomb
 ]
 var weapon
 var weapon_tween
